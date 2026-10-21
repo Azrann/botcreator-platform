@@ -4,6 +4,31 @@ Aplicación Shopify para instalar y configurar un widget de atención al cliente
 
 Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
 
+<!-- BEGIN project-context -->
+
+## Antigüedad y evidencia
+
+**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+
+- Archivo más reciente datable: **2019-04-03**, [`bot.shopifyapp/node-server/package-lock.json`](node-server/package-lock.json); fecha del commit que modificó el archivo, recuperada del Git local.
+- Primer registro del repositorio Git original que contiene este código: **2019-03-15**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
+- Dependencia fechada más reciente entre las comprobadas: [@shopify/koa-shopify-auth 3.1.18](https://www.npmjs.com/package/@shopify/koa-shopify-auth/v/3.1.18), publicada el **2019-03-14** (versión fijada en el lockfile), en [`bot.shopifyapp/Chat-Customer-service/package.json`](Chat-Customer-service/package.json). Fecha contrastada con la versión de [`bot.shopifyapp/Chat-Customer-service/package-lock.json`](Chat-Customer-service/package-lock.json).
+
+La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+
+Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+
+## Por qué merece la pena mirarlo
+
+El recorrido desde la autenticación de una tienda hasta la modificación de sus assets conecta OAuth, un servidor Node y la instalación de un widget. Es útil para entender la integración de un producto externo dentro de una plataforma de comercio.
+
+Puntos de entrada al código:
+
+- [`Chat-Customer-service/server.js`](Chat-Customer-service/server.js)
+- [`node-server/app.js`](node-server/app.js)
+
+<!-- END project-context -->
+
 ## Estructura y responsabilidades
 
 | Ruta | Responsabilidad |

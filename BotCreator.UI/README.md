@@ -4,6 +4,30 @@ Frontend Angular del gestor de bots: acceso y registro de usuarios, recuperació
 
 Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
 
+<!-- BEGIN project-context -->
+
+## Antigüedad y evidencia
+
+**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+
+- Archivo más reciente datable: **2019-11-07**, [`BotCreator.UI/tslint.json`](tslint.json); fecha del commit que modificó el archivo, recuperada del Git local.
+- Primer registro del repositorio Git original que contiene este código: **2019-11-07**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
+- Dependencia fechada más reciente entre las comprobadas: [@angular/cli 8.1.3](https://www.npmjs.com/package/@angular/cli/v/8.1.3), publicada el **2019-07-29** (versión fijada en el lockfile), en [`BotCreator.UI/package.json`](package.json). Fecha contrastada con la versión de [`BotCreator.UI/package-lock.json`](package-lock.json).
+
+La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+
+## Por qué merece la pena mirarlo
+
+La interfaz permite configurar un bot y probar su conversación desde el mismo panel. La conexión entre servicios HTTP, motor de chat y pantallas de prueba es interesante para estudiar cómo comprobar visualmente el comportamiento de una configuración.
+
+Puntos de entrada al código:
+
+- [`src/app/core`](src/app/core/)
+- [`src/app/pages`](src/app/pages/)
+- [`src/app/pages/bot/bot-test`](src/app/pages/bot/bot-test/)
+
+<!-- END project-context -->
+
 ## Estructura y responsabilidades
 
 | Ruta | Responsabilidad |

@@ -4,6 +4,30 @@ Frontend Angular del gestor de bots: acceso y registro de usuarios, recuperació
 
 Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
 
+<!-- BEGIN project-context -->
+
+## Antigüedad y evidencia
+
+**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+
+- Archivo más reciente datable: **2019-11-09**, [`botmanager.ui/src/app/pages/events/events.component.ts`](src/app/pages/events/events.component.ts); fecha de modificación conservada.
+- Primer registro del repositorio Git original que contiene este código: **2019-01-13**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
+- Dependencia fechada más reciente entre las comprobadas: [@angular/core 8.1.3](https://www.npmjs.com/package/@angular/core/v/8.1.3), publicada el **2019-07-26** (versión fijada en el lockfile), en [`botmanager.ui/package.json`](package.json). Fecha contrastada con la versión de [`botmanager.ui/package-lock.json`](package-lock.json).
+
+La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+
+## Por qué merece la pena mirarlo
+
+Esta variante reúne edición de bots, pruebas de conversación y consulta de eventos. Compararla con BotCreator.UI permite observar la evolución de un panel Angular sobre una base común y localizar los cambios de las pantallas de pruebas y eventos.
+
+Puntos de entrada al código:
+
+- [`src/app/pages/events/events.component.ts`](src/app/pages/events/events.component.ts)
+- [`src/app/core`](src/app/core/)
+- [`src/app/pages`](src/app/pages/)
+
+<!-- END project-context -->
+
 ## Estructura y responsabilidades
 
 | Ruta | Responsabilidad |

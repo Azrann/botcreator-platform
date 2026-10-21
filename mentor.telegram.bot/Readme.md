@@ -4,6 +4,33 @@ Plataforma de bots Telegram con flujos conversacionales, SDK, atención al clien
 
 Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
 
+<!-- BEGIN project-context -->
+
+## Antigüedad y evidencia
+
+**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+
+- Archivo más reciente datable: **2020-02-27**, [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj`](src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj); fecha del commit que modificó el archivo, recuperada del Git local.
+- Primer registro del repositorio Git original que contiene este código: **2018-07-05**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
+- Dependencia fechada más reciente entre las comprobadas: [Microsoft.EntityFrameworkCore 3.1.2](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/3.1.2), publicada el **2020-02-19** (versión declarada), en [`mentor.telegram.bot/src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj`](src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj).
+- Referencia adicional: destino `netcoreapp2.2` en [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj`](src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj); su [versión estable se publicó el 2018-12-04](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+
+La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+
+Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+
+## Por qué merece la pena mirarlo
+
+El motor separa acciones, procesadores y abstracciones de interfaz para construir flujos conversacionales. Es interesante seguir cómo una misma lógica de conversación se conecta con clientes, widgets y servicios de pago o notificación.
+
+Puntos de entrada al código:
+
+- [`src/Mentor.telegram.bot/Bot.telegram.funnel/Actions/ActionProcessor.cs`](src/Mentor.telegram.bot/Bot.telegram.funnel/Actions/ActionProcessor.cs)
+- [`src/Mentor.telegram.bot/Bot.telegram.funnel/IUserInterfaceService.cs`](src/Mentor.telegram.bot/Bot.telegram.funnel/IUserInterfaceService.cs)
+- [`src/Widget`](src/Widget/)
+
+<!-- END project-context -->
+
 ## Estructura y responsabilidades
 
 | Ruta | Responsabilidad |
