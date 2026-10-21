@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../projects/coda/src/assets/sass/variables'; //CHANGED
+@import "../projects/coda/src/assets/sass/loader.scss";
+@import "../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css";
+@import "../projects/coda/src/assets/sass/bootstrap.scss";
+@import "../projects/coda/src/assets/css/icofont.min.css";
+@import "../projects/coda/src/assets/css/ngx.charts.css";
+@import "../projects/coda/src/assets/css/angular-calendar.css";
+@import "../node_modules/dragula/dist/dragula.css";
+@import "../node_modules/leaflet/dist/leaflet.css";
+@import "../projects/coda/src/assets/sass/styles.scss";
+@import "../src/app/themes/prism-theme.scss";
+
+.bot__pc {
+    @media #{$max767} {
+        display: none !important;
+    }
+}
+
+.bot__mobile {
+    @media #{$min768} {
+        display: none !important;
+    }
+
+    td, th {
+        padding-left: 4px !important;
+        padding-right: 0 !important;
+    }
+}

@@ -1,0 +1,72 @@
+@import '../../../../assets/sass/variables'; //CHANGED
+
+$extra-small-height: 4px;
+$small-height: 8px;
+$default-height: 12px;
+$large-height: 16px;
+
+$_shape: $shape;
+
+:host {
+  display: block;
+  margin: 0 0 2 * $module-rem 0;
+
+  .progress {
+    background: rgba( #000, 0.1);
+    border-radius: $_shape;
+    display: block;
+    overflow: hidden;
+    height: $default-height;
+		width: 100%;
+
+    .bar {
+      background: accent-palette(500);
+      border-radius: $_shape;
+      display: block;
+			height: 100%;
+			transition: width .3s $animation;
+      text-align: center;
+      line-height: 1;
+			width: 0%;
+
+      .label {
+        color:#fff;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  &.extra-small {
+    > .progress {
+			height: $extra-small-height;
+
+      > .bar {
+        > .label {
+          display: none;
+        }
+      }
+    }
+  }
+  &.small {
+    > .progress {
+			height: $small-height;
+
+      > .bar {
+        > .label {
+          display: none;
+        }
+      }
+    }
+  }
+  &.large {
+    > .progress {
+			height: $large-height;
+
+      > .bar {
+        > .label {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}

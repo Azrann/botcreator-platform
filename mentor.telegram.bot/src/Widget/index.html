@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div id="id"></div>
+<p>Choose your message colors:</p>
+
+<div>
+    <input type="color" id="message_color"
+           value="#000000">
+    <label for="message_color">Message text color:</label>
+</div>
+<div>
+    <input type="color" id="mes_bcg"
+           value="#808080">
+    <label for="mes_bcg">Message Bot background color:</label>
+</div>
+
+<div>
+    <input type="color" id="mes_user_bcg"
+           value="#ffffff">
+    <label for="mes_user_bcg">Message User background color:</label>
+</div>
+
+<div>
+    <input type="color" id="mod_head_bcg"
+           value="#ffffff">
+    <label for="mod_head_bcg">HelpWidget_modal_head background color:</label>
+</div>
+
+
+<div>
+    <input type="color" id="mod_head_bottom_bcg"
+           value="#ffffff">
+    <label for="mod_head_bottom_bcg">helpWidget_modal_head__bottom background color:</label>
+</div>
+
+<div>
+    <input type="color" id="mod_head_color"
+           value="#000000">
+    <label for="mod_head_color">HelpWidget_modal_head text color:</label>
+</div>
+
+<div>
+    <input type="checkbox" id="showBotSignatures" checked>
+    <label for="showBotSignatures">Show or hide Bot name and time</label>
+</div>
+
+<div>
+    <input type="checkbox" id="showClientSignatures" checked>
+    <label for="showClientSignatures">Show or hide Client name and time</label>
+</div>
+
+<div>
+    <h2>Set the box-shadow for message:</h2>
+    <input type="range" id="blur" min="0" max="10" value="1"/>
+    <input type="range" id="shadow_x" min="0" max="10" value="1"/>
+    <input type="range" id="shadow_y" min="0" max="10" value="1"/>
+    <input type="color" id="shadow_color"
+           value="#777777">
+</div>
+
+<div>
+    <h2>Set buttons properties:</h2>
+    <div>
+        <input type="color" id="button_border_color"
+               value="#eeeeee">
+        <label for="button_border_color">Button border color:</label>
+    </div>
+    <div>
+        <input type="color" id="button_bcg_color"
+               value="#ffffff">
+        <label for="button_bcg_color">Button background color:</label>
+    </div>
+    <div>
+        <input type="color" id="button_border_hover_color"
+               value="#eeeeee">
+        <label for="button_border_color">Button hover border color:</label>
+    </div>
+    <div>
+        <input type="color" id="button_bcg_hover_color"
+               value="#cccccc">
+        <label for="button_bcg_color">Button hover background color:</label>
+    </div>
+
+    <div>
+        <h4>Paddings for buttons</h4>
+
+        <label for="btn_vertical_padding">Button vertical padding:
+            <br>
+            <input type="range" id="btn_vertical_padding" min="1" max="15" value="5"/>
+        </label>
+        <br>
+        <label for="btn_horizontal_padding">Button horizontals padding:
+            <br>
+            <input type="range" id="btn_horizontal_padding" min="1" max="15" value="2.5"/>
+        </label>
+
+    </div>
+</div>
+
+<div>
+    <input type="checkbox" id="showBtn_wrapperBCG" checked>
+    <label for="showBtn_wrapperBCG">Show btn_wrapper background color</label>
+</div>
+
+<h3>
+    Textarea settings:
+</h3>
+
+<div>
+    <input type="color" id="textarea_bcg_color"
+           value="#ffffff">
+    <label for="textarea_bcg_color">Textarea background color:</label>
+</div>
+<div>
+    <input type="color" id="textarea_color"
+           value="#000000">
+    <label for="textarea_color">Textarea color:</label>
+</div>
+<div>
+    <input type="color" id="textarea_border_color"
+           value="#000000">
+    <label for="textarea_border_color">Textarea border color:</label>
+</div>
+
+<div>
+    Styles for link in the message:
+    <div>
+        <input type="color" id="link_color"
+               value="#000000">
+        <label for="link_color">Link color:</label>
+    </div>
+    <div>
+        <input type="color" id="link_hover_color"
+               value="#000000">
+        <label for="link_hover_color">Link hover color:</label>
+    </div>
+    <div>
+        <input type="checkbox" id="link_switch_underline">
+        <label for="link_switch_underline">Switch underline for link</label>
+    </div>
+    <div>
+        <input type="checkbox" id="link_switch_thickness" checked>
+        <label for="link_switch_thickness">Switch thickness for link</label>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js"></script>
+
+<script>
+    var botId = '36a1ee7c-1ba2-4356-8c7d-1294a50ed662';
+</script>
+<script src="https://botcreator.azureedge.net/javascript/init-test.js" defer></script>
+
+    document.getElementById('message_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_person_message'].setStyle('color', e.target.value);
+        help_widget.styles['.helpWidget_person_message b'].setStyle('color', e.target.value)
+    };
+
+    document.getElementById('mes_bcg').onchange = function (e) {
+        help_widget.styles['.helpWidget_person_message'].setStyle('background-color', e.target.value);
+    };
+
+    document.getElementById('mes_user_bcg').onchange = function (e) {
+        help_widget.styles['.helpWidget_person[data-bot=false] .helpWidget_person_message'].setStyle('background-color', e.target.value);
+    };
+
+    document.getElementById('mod_head_bottom_bcg').onchange = function (e) {
+        help_widget.styles['.helpWidget_modal_head__bottom'].setStyle('background-color', e.target.value);
+    };
+
+    document.getElementById('mod_head_bcg').onchange = function (e) {
+        help_widget.styles['.helpWidget_modal_head'].setStyle('background-color', e.target.value);
+    };
+
+    document.getElementById('mod_head_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_modal_head'].setStyle('color', e.target.value);
+    };
+
+    document.getElementById('showBotSignatures').onchange = function (e) {
+        help_widget.styles['.personal_credentials'].setStyle('display', e.target.checked ? 'block' : 'none');
+    };
+
+    document.getElementById('showClientSignatures').onchange = function (e) {
+        help_widget.styles['.helpWidget_person[data-bot=false] .personal_credentials'].setStyle('display', e.target.checked ? 'block' : 'none');
+    };
+
+    document.getElementById('showBtn_wrapperBCG').onchange = function (e) {
+        help_widget.styles['.helpWidget_person_message.btn_wrapper'].setStyle('background-color', e.target.checked ? 'default' : 'transparent');
+    };
+
+    document.getElementById('button_border_color').onchange = function (e) {
+        help_widget.styles['.btn-simple'].setStyle('border-color', e.target.value);
+    };
+
+    document.getElementById('button_bcg_color').onchange = function (e) {
+        help_widget.styles['.btn-simple'].setStyle('background-color', e.target.value);
+    };
+    document.getElementById('button_border_hover_color').onchange = function (e) {
+        help_widget.styles['.btn-simple:hover'].setStyle('border-color', e.target.value);
+    };
+
+    document.getElementById('button_bcg_hover_color').onchange = function (e) {
+        help_widget.styles['.btn-simple:hover'].setStyle('background-color', e.target.value);
+    };
+    document.getElementById('textarea_bcg_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_message_wrapper textarea'].setStyle('background-color', e.target.value);
+    };
+    document.getElementById('textarea_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_message_wrapper textarea'].setStyle('color', e.target.value);
+    };
+    document.getElementById('textarea_border_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_message_wrapper textarea'].setStyle('border-color', e.target.value);
+    };
+    document.getElementById('btn_vertical_padding').onchange = function () {
+        help_widget.styles['.btn-simple'].setStyle('padding-top', this.value + 'px');
+        help_widget.styles['.btn-simple'].setStyle('padding-bottom', this.value + 'px');
+    };
+    document.getElementById('btn_horizontal_padding').onchange = function () {
+        help_widget.styles['.btn-simple'].setStyle('padding-left', this.value + 'px');
+        help_widget.styles['.btn-simple'].setStyle('padding-right', this.value + 'px');
+    };
+    document.getElementById('link_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_clear_message a'].setStyle('color', e.target.value);
+    };
+    document.getElementById('link_hover_color').onchange = function (e) {
+        help_widget.styles['.helpWidget_clear_message a:hover'].setStyle('color', e.target.value);
+    };
+    document.getElementById('link_switch_underline').onchange = function (e) {
+        help_widget.styles['.helpWidget_clear_message a'].setStyle('text-decoration', e.target.checked ? 'underline' : 'none');
+    };
+    document.getElementById('link_switch_thickness').onchange = function (e) {
+        help_widget.styles['.helpWidget_clear_message a'].setStyle('font-weight', e.target.checked ? '700' : '400');
+    };
+    var shadow_blur = document.getElementById('blur'),
+        shadow_color = document.getElementById('shadow_color'),
+        shadow_x = document.getElementById('shadow_x'),
+        shadow_y = document.getElementById('shadow_y')
+    ;
+    shadow_blur.onchange = function () {
+        help_widget.styles['.helpWidget_person_message'].setStyle('box-shadow', shadow_x.value+'px '+shadow_y.value+'px '+shadow_blur.value+'px '+ shadow_color.value);
+    };
+    shadow_color.onchange = function () {
+        help_widget.styles['.helpWidget_person_message'].setStyle('box-shadow', shadow_x.value+'px '+shadow_y.value+'px '+shadow_blur.value+'px '+ shadow_color.value);
+    };
+    shadow_x.onchange = function () {
+        help_widget.styles['.helpWidget_person_message'].setStyle('box-shadow', shadow_x.value+'px '+shadow_y.value+'px '+shadow_blur.value+'px '+ shadow_color.value);
+    };
+    shadow_y.onchange = function () {
+        help_widget.styles['.helpWidget_person_message'].setStyle('box-shadow', shadow_x.value+'px '+shadow_y.value+'px '+shadow_blur.value+'px '+ shadow_color.value);
+    };
+</script>
+</body>
+</html>

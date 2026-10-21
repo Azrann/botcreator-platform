@@ -1,0 +1,47 @@
+@import '../../../../../assets/sass/variables'; //CHANGED
+
+:host {
+  align-items: center;
+  border-bottom-color: inherit;
+  border-bottom-width: inherit;
+  border-bottom-style: inherit;
+  display: flex;
+  padding: $module;
+  position: relative;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  .item-img {
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    height: 5 * $module;
+    margin: $module-rem;
+    min-height: 5 * $module;
+    min-width: 5 * $module;
+    justify-content: center;
+    overflow: hidden;
+    width: 5 * $module;
+
+    > img {
+      height: 100%;
+      position: relative;
+    }
+  }
+  .item-content {
+    align-self: center;
+    font-weight: 100;
+    display: block;
+    margin: $module-rem;
+		position: relative;
+		width: 100%;
+
+    .item-title {
+      font-size: 1rem;
+      margin: 0 0 ($module-rem / 2);
+      padding: 0;
+    }
+  }
+}

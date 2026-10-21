@@ -1,0 +1,97 @@
+{
+    "common": {
+        "create": "Nuevo",
+        "edit": "Editar",
+        "prev": "Anterior",
+        "next": "Siguiente",
+        "save": "Guardar",
+        "name": "Nombre",
+        "general": "General",
+        "questions": "Preguntas",
+        "contacts": "Contactos",
+        "settings": "Ajustes"
+    },
+    "hints": {
+        "fill": "Rellena el formulario de abajo para crear tu bot de atención al cliente",
+        "askQuestion": "La mayoria de tus clientes siempre preguntan lo mismo, ahora puedes escribir aqui esas preguntas que mas se repiten",
+        "configOptions": "Algunos usuarios querrán hablar contigo, te dejamos 3 opciones<br />- Pueden hablar contigo usando la plataforma \"Chats\" .<br />- Abriendo una conversación den Whatsapp.<br />- A través de Facebook messenger."
+    },
+    "validation": {
+        "enterValidName": "Introduce un nombre valido",
+        "enterValidEmail": "Introduce un email valido",
+        "enterValidButtonText1": "Enter valid Button Text 1",
+        "enterValidResultText1": "Enter valid Result Text 1",
+        "enterValidButtonText2": "Enter valid Button Text 2",
+        "enterValidResultText2": "Enter valid Result Text 2"
+    },
+    "serviceBot": {
+        "service Bot": "Service Bot",
+        "serviceBotPart": " un bot de atención al cliente",
+        "general": {
+            "botName": "Nombre de tu Bot"
+        },
+        "questions": {
+            "buttonText1": "Pregunta 1",
+            "buttonText2": "Pregunta 2",
+            "buttonText3": "Pregunta 3",
+            "resultText1": "Respuesta a Pregunta 1",
+            "resultText2": "Respuesta a Pregunta 2",
+            "resultText3": "Respuesta a Pregunta 3"
+        },
+        "contacts": {
+            "talkToMe": "Text para la opción hablar conmigo",
+            "chatOnWeb": "Hablar en la Web",
+            "whatsApp": "WhatsApp",
+            "fb": "Facebook",
+            "callMe": "Llámame",
+            "userName": "REPLACE_WITH_YOUR_VALUE",
+            "phoneNumber": "REPLACE_WITH_YOUR_VALUE",
+            "whatsAppPlaceholder": "--Your WhatsApp number",
+            "fbPlaceholder": "--Your facebook me",
+            "callMePlaceholder": "--Your email to receive a notification"
+        },
+        "settings": {
+            "language": "Idioma",
+            "primaryColor": "Color Principal",
+            "secondaryColor": "Color Secundario",
+            "chatNow": "Hablamos?",
+            "bubbleMessage": "Bubble Message",
+            "description": "Descripcion",
+            "active": "--Bot is activated",
+            "notActive": "--Bot is deactivated",
+            "htmlContent": "Copia este HTML en tu web para empezar a usar tu Bot"
+        }
+    },
+    "bot": {
+        "myBots": "Mis Bots"
+    },
+    "menu": {
+        "dashboards": "Panel",
+        "default": "Principal",
+        "analytical": "Analítica",
+        "financial": "Financiera",
+        "travel": "viajes"
+    },
+    "signIn": {
+        "signIn": "Registrarse",
+        "login": "Entrar",
+        "password": "REPLACE_WITH_YOUR_VALUE",
+        "keepSigned": "Keep me signed in",
+        "signUp": "Registrarse",
+        "passwordForgot": "REPLACE_WITH_YOUR_VALUE"
+    },
+    "register": {
+        "register": "Registrarse",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Email",
+        "password": "REPLACE_WITH_YOUR_VALUE"
+    },
+    "password": {
+        "password": "REPLACE_WITH_YOUR_VALUE",
+        "forgot": "Olvidaste la contraseña?",
+        "reset": "Resetear la contraseña",
+        "confirmPassword": "REPLACE_WITH_YOUR_VALUE",
+        "setPassword": "REPLACE_WITH_YOUR_VALUE"
+    }
+}

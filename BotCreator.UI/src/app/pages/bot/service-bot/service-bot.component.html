@@ -1,0 +1,583 @@
+<form [formGroup]="customerServiceBotForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="col-12" class="bot__pc">
+        <tc-card
+            [title]="(isEditMode? ('common.edit'|translate) : ('common.create'|translate) ) + ('serviceBot.serviceBotPart'|translate) ">
+            <tc-progress [progress]="setProgress(serviceBotTabs.selectedTab)"></tc-progress>
+            <tc-tabs #serviceBotTabs [title]="'Service Bot'" [selectedTab]="serviceBotTabs.selectedTab">
+                <tc-tab [tabTitle]="'common.general'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'">{{'hints.fill'|translate}}</tc-badge>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 col-sm-6 col-md-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.general.botName'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-input formControlName="name" [readonly]="isEditMode"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.name.touched && formCtrls.name.invalid">
+                                    {{'validation.enterValidName'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.questions'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'">{{'hints.askQuestion'|translate}}</tc-badge>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText1'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-input formControlName="buttonText1"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.buttonText1.touched && formCtrls.buttonText1.invalid">
+                                    {{'validation.enterValidButtonText1'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText1'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-textarea formControlName="resultText1"></tc-textarea>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.resultText1.touched && formCtrls.resultText1.invalid">
+                                    {{'validation.enterValidResultText1'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText2'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-input formControlName="buttonText2"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.buttonText2.touched && formCtrls.buttonText2.invalid">
+                                    {{'validation.enterValidButtonText2'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText2'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-textarea formControlName="resultText2"></tc-textarea>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.resultText2.touched && formCtrls.resultText2.invalid">
+                                    {{'validation.enterValidResultText2'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText3'|translate}}</tc-form-label>
+                                <tc-input formControlName="buttonText3"></tc-input>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText3'|translate}}</tc-form-label>
+                                <tc-textarea formControlName="resultText3"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.contacts'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'" [innerHTML]="'hints.configOptions' | translate">
+                            </tc-badge>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="chatOnWeb">{{'serviceBot.contacts.chatOnWeb'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-7 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="whatsappChecked">
+                                    {{'serviceBot.contacts.whatsApp'|translate}}</tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.whatsappChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-brand-whatsapp'" formControlName="whatsappNumber"
+                                    [placeholder]="'serviceBot.contacts.whatsAppPlaceholder'|translate">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="fbChecked">{{'serviceBot.contacts.fb'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.fbChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-facebook'" formControlName="fbUserName"
+                                    [placeholder]="'serviceBot.contacts.fbPlaceholder'|translate">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="callMeChecked">{{'serviceBot.contacts.callMe'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.callMeChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-email'" formControlName="callMeEmail"
+                                    [placeholder]="'serviceBot.contacts.callMePlaceholder'|translate" [type]="'email'">
+                                </tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.callMeEmail.touched && formCtrls.callMeEmail.invalid">
+                                    {{'serviceBot.contacts.enterValidEmail'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-9">
+                            <tc-form-group>
+                                <tc-checkbox formControlName="talkToMeChecked">
+                                    {{'serviceBot.contacts.talkToMe'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-12 col-md-9" *ngIf="formCtrls.talkToMeChecked.value">
+                            <tc-form-group>
+                                <tc-textarea formControlName="talkToAgent"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.settings'|translate">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.language'|translate}}</tc-form-label>
+                                <tc-select [placeholder]="'Selected option'" class="form-control"
+                                    formControlName="language" [options]="allLanguages">
+                                </tc-select>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.primaryColor'|translate}}</tc-form-label>
+                                <tc-input formControlName="primaryColor" [isColorPicker]="true"
+                                    [style.background]="formCtrls.primaryColor.value" [colorPickerPosition]="'bottom'">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.secondaryColor'|translate}}</tc-form-label>
+                                <tc-input formControlName="secondaryColor" [isColorPicker]="true"
+                                    [style.background]="formCtrls.secondaryColor.value"
+                                    [colorPickerPosition]="'bottom'">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.chatNow'|translate}}</tc-form-label>
+                                <tc-input formControlName="chatNow"></tc-input>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.bubbleMessage'|translate}}</tc-form-label>
+                                <tc-input formControlName="bubbleMessage"></tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.description'|translate}}</tc-form-label>
+                                <tc-textarea formControlName="description"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <tc-form-group>
+                                <tc-switcher formControlName="active">
+                                    <tc-form-label class="active-label">
+                                        {{(formCtrls.active.value? 'serviceBot.settings.active' : 'serviceBot.settings.notActive')|translate}}
+                                    </tc-form-label>
+                                </tc-switcher>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="isEditMode">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.htmlContent'|translate}}</tc-form-label>
+                                <app-bot-htmlcontent [htmlContent]="formCtrls.htmlContent.value"></app-bot-htmlcontent>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+            </tc-tabs>
+
+            <tc-form-group class="mb-0">
+                <div class="d-flex justify-content-between pt-4">
+                    <button [disabled]="serviceBotTabs.selectedTab == 1" tc-button
+                        (click)="serviceBotTabs.selectedTab = serviceBotTabs.selectedTab - 1" [type]="'button'">
+                        {{'common.prev'|translate}}
+                    </button>
+                    <button *ngIf="serviceBotTabs.selectedTab < serviceBotTabs.max" tc-button
+                        (click)="serviceBotTabs.selectedTab = serviceBotTabs.selectedTab + 1" [type]="'button'">
+                        {{'common.next'|translate}}</button>
+                    <button *ngIf="serviceBotTabs.selectedTab == serviceBotTabs.max" tc-button [view]="'success'"
+                        [beforeIcon]="'icofont-check'"
+                        [disabled]="customerServiceBotForm.invalid">{{'common.save'|translate}}</button>
+                </div>
+            </tc-form-group>
+        </tc-card>
+    </div>
+
+    <div class="col-12" class="bot__mobile">
+        <div class="bot__mobile__wrapper">
+            <tc-tabs #mobileServiceBotTabs [title]="'Service Bot'" [selectedTab]="mobileServiceBotTabs.selectedTab">
+                <tc-tab [tabTitle]="'common.general'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'">{{'hints.fill'|translate}}</tc-badge>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 col-sm-6 col-md-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.general.botName'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-input formControlName="name" [readonly]="isEditMode"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.name.touched && formCtrls.name.invalid">
+                                    {{'validation.enterValidName'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.questions'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'">Most of the clients always ask the same questions,
+                                now you have the oportunity to configure
+                                them
+                            </tc-badge>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText1'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup></tc-form-label>
+                                <tc-input formControlName="buttonText1"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.buttonText1.touched && formCtrls.buttonText1.invalid">
+                                    {{'validation.enterValidButtonText1'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText1'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup></tc-form-label>
+                                <tc-textarea formControlName="resultText1"></tc-textarea>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.resultText1.touched && formCtrls.resultText1.invalid">
+                                    {{'validation.enterValidResultText1'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText2'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-input formControlName="buttonText2"></tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.buttonText2.touched && formCtrls.buttonText2.invalid">
+                                    {{'validation.enterValidButtonText2'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText2'|translate}}
+                                    <sup [tcColor]="'#e24d4d'">*</sup>
+                                </tc-form-label>
+                                <tc-textarea formControlName="resultText2"></tc-textarea>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.resultText2.touched && formCtrls.resultText2.invalid">
+                                    {{'validation.enterValidResultText2'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.buttonText3'|translate}}</tc-form-label>
+                                <tc-input formControlName="buttonText3"></tc-input>
+                            </tc-form-group>
+                        </div>
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.questions.resultText3'|translate}}</tc-form-label>
+                                <tc-textarea formControlName="resultText3"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.contacts'|translate">
+                    <div class="row question-hint" *ngIf="!isEditMode">
+                        <div class="col-12">
+                            <tc-badge [view]="'info'" [size]="'lg'" [innerHTML]="'hints.configOptions' | translate">
+                            </tc-badge>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="chatOnWeb">{{'serviceBot.contacts.chatOnWeb'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="whatsappChecked">
+                                    {{'serviceBot.contacts.whatsApp'|translate}}</tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.whatsappChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-brand-whatsapp'" formControlName="whatsappNumber"
+                                    [placeholder]="'serviceBot.contacts.whatsAppPlaceholder'|translate">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="fbChecked">{{'serviceBot.contacts.fb'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.fbChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-facebook'" formControlName="fbUserName"
+                                    [placeholder]="'serviceBot.contacts.fbPlaceholder'|translate">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-4">
+                            <tc-form-group class="contacts">
+                                <tc-checkbox formControlName="callMeChecked">{{'serviceBot.contacts.callMe'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-7 col-md-5" *ngIf="formCtrls.callMeChecked.value">
+                            <tc-form-group>
+                                <tc-input [prefixIcon]="'icofont-email'" formControlName="callMeEmail"
+                                    [placeholder]="'serviceBot.contacts.callMePlaceholder'|translate" [type]="'email'">
+                                </tc-input>
+                                <tc-form-description [tcColor]="'#e24d4d'"
+                                    *ngIf="formCtrls.callMeEmail.touched && formCtrls.callMeEmail.invalid">
+                                    {{'serviceBot.contacts.enterValidEmail'|translate}}
+                                </tc-form-description>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5 col-md-9">
+                            <tc-form-group>
+                                <tc-checkbox formControlName="talkToMeChecked">
+                                    {{'serviceBot.contacts.talkToMe'|translate}}
+                                </tc-checkbox>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-12 col-md-9" *ngIf="formCtrls.talkToMeChecked.value">
+                            <tc-form-group>
+                                <tc-textarea formControlName="talkToAgent"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+
+                <tc-tab [tabTitle]="'common.settings'|translate">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.language'|translate}}</tc-form-label>
+                                <tc-select [placeholder]="'Selected option'" class="form-control"
+                                    formControlName="language" [options]="allLanguages">
+                                </tc-select>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.primaryColor'|translate}}</tc-form-label>
+                                <tc-input formControlName="primaryColor" [isColorPicker]="true"
+                                    [style.background]="formCtrls.primaryColor.value" [colorPickerPosition]="'bottom'">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.secondaryColor'|translate}}</tc-form-label>
+                                <tc-input formControlName="secondaryColor" [isColorPicker]="true"
+                                    [style.background]="formCtrls.secondaryColor.value"
+                                    [colorPickerPosition]="'bottom'">
+                                </tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.chatNow'|translate}}</tc-form-label>
+                                <tc-input formControlName="chatNow"></tc-input>
+                            </tc-form-group>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.bubbleMessage'|translate}}</tc-form-label>
+                                <tc-input formControlName="bubbleMessage"></tc-input>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.description'|translate}}</tc-form-label>
+                                <tc-textarea formControlName="description"></tc-textarea>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-switcher formControlName="active">
+                                    <tc-form-label class="active-label">
+                                        {{(formCtrls.active.value? 'serviceBot.settings.active' : 'serviceBot.settings.notActive')|translate}}
+                                    </tc-form-label>
+                                </tc-switcher>
+                            </tc-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row" *ngIf="isEditMode">
+                        <div class="col-sm-6">
+                            <tc-form-group>
+                                <tc-form-label>{{'serviceBot.settings.htmlContent'|translate}}</tc-form-label>
+                                <app-bot-htmlcontent [htmlContent]="formCtrls.htmlContent.value"></app-bot-htmlcontent>
+                            </tc-form-group>
+                        </div>
+                    </div>
+                </tc-tab>
+            </tc-tabs>
+
+            <tc-form-group class="mb-0">
+                <div class="d-flex justify-content-between pt-4">
+                    <button [disabled]="mobileServiceBotTabs.selectedTab == 1" tc-button
+                        (click)="mobileServiceBotTabs.selectedTab = mobileServiceBotTabs.selectedTab - 1"
+                        [type]="'button'">
+                        Previous</button>
+                    <button *ngIf="mobileServiceBotTabs.selectedTab < mobileServiceBotTabs.max" tc-button
+                        (click)="mobileServiceBotTabs.selectedTab = mobileServiceBotTabs.selectedTab + 1"
+                        [type]="'button'">
+                        Next</button>
+                    <button *ngIf="mobileServiceBotTabs.selectedTab == mobileServiceBotTabs.max" tc-button
+                        [view]="'success'" [beforeIcon]="'icofont-check'"
+                        [disabled]="customerServiceBotForm.invalid">Save</button>
+                </div>
+            </tc-form-group>
+        </div>
+
+    </div>
+
+
+</form>

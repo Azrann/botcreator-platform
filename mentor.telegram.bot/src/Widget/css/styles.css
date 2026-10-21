@@ -1,0 +1,17 @@
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+p{
+    font-size: 1.2em;
+}
+p,
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}

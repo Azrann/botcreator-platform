@@ -1,0 +1,18 @@
+@import '../../../assets/sass/variables'; //CHANGED
+
+:host {
+  .layout-wrap {
+    .nav-bar {
+      padding-left: $side-bar-width;
+      @media #{$max991} {
+        padding-left: 0;
+      }
+    }
+    .main {
+      padding-left: $side-bar-width;
+      @media #{$max991} {
+        padding-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="PayPal" Version="2.0.0-rc2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bot.Configuration\Bot.Configuration.csproj" />
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj" />
+    <ProjectReference Include="..\Mentor.telegram.bot.models\Mentor.telegram.bot.models.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release goto :exit&#xD;&#xA;cd $(ProjectDir)&#xD;&#xA;copy /y bin\Debug\netcoreapp2.2\*.dll ..\Mentor.telegram.bot.sdk\dlls&#xD;&#xA;copy /y bin\Debug\netcoreapp2.2\*.pdb ..\Mentor.telegram.bot.sdk\dlls&#xD;&#xA; :exit" />
+  </Target>
+
+</Project>

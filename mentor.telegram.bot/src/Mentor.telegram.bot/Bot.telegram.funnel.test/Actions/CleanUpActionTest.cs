@@ -1,0 +1,19 @@
+using Bot.telegram.funnel.Actions;
+using Newtonsoft.Json;
+using Xunit;
+
+namespace Bot.telegram.funnel.test.Trigger
+{
+    public class CleanUpActionTest
+    {
+        [Fact]
+        public void ICanDeserializeResponse()
+        {
+            string response =
+                "{'success':true,'payload':['Ion Fintescu','Batu','Kyriakos Leivadas','Henk','Pradeep','Marc','Ronny','Doekes Prakken','Enrico','Fabio Dentamaro','Jeffrey Wolf','CryptoVal','Tuukka Joutsenlahti','Bao','Eduard','Midxxb','Camilo Gomez','Artem','Andreas','Kajtimar','Mark McCourt','Angle Lee','Thiago','Iztok Zajc','Anthony Hall','Mohamed Elsaied','Qt@crypto','Stephen Hemedes','Yukang Li','Dinesh Rajasekharan','Ray Allen','Tuco','Arnold','Hiram Clark','KK Koay','Sukrit','Hb 400','Savvas Vezyridis','Luc','Northrend','Pandu','Michel Mann','Arceris','Alok','Erwan','FastEddie','Rabelo','Christa Schadt','danny smets','Simon Anctil','Federico','Philip','Nguyen Hoang','Crypto NZ','Floris','Enes Duruk','Jeff','Libor','Nicholas Soepriatna','Kevin','Vlad I','Rich','Kevin Weel','0x90','Jan Pieter Kastelein','Samuel Lam','Jason Epstein','Olivier De Vreyer','Valeriy Loran','Bryce','T Tran','Ivan Torrez','Guggs','Kim Beginner','Crypto Insider Bit','Piyush Tejwani','Robert Wakefield','N Dsh','Barak','Zeus Bhand','Allaert','Jurgen','Mark Ferdinands','Ermis','Darz -Jack','Pierre','Flemishcarpenter','Ivana P','John','Schneur Levine','Chandler B','luqasz','TC','Guydo','Surfer G','Blair Carbonell','Jeremy','qw23qw2','Shan McDonell','russell hill','SriharshaP','cptyowl','Aurelien','Quynh Larimer','Cosmoonaut','Francesc','vadena des paul','Vasyl','Ioannis Ch','Robert Ramos','Crypto Club Company','Denis Lit','Paul','Ufuk Kazan','will shak','Michel Portal','Maximzimin','Calvin XTZ','Daniel Nilsson','Jose Miguel Espinola Salas','PloyTan','edko','Willem Van Renterghem','Luke','Tuan Nguyen','Yago','Coen','Paul Tamas','Champ Ion','Redrum','Jin','Dixon Wells','Rachel Saya','Gilles Weber','Alexander','Amit Kala','SalyDaniel','Crypto Dad','Satfinder','Kristijan Bracun','Sunil Balar','Cornel Vlad','Achi','Miklos Bereznai','Jatin','Superbit3','traderRiva','Trevor Cannavo','Bib Bob','Paola Mazzei','Jason Meikle','Mark Hyde','Tony Rabena','Cheryl Caruz','LucF','Mike Tran','Yuko','Marco','Imu Lovein','Dmitry','Serge','Daniel Iliev','Jordi Rossi','Bejoy Nair','Monkey Mantra','Charles Adams','Serenite','Oliver','Timothy Dunstone','Noel Bruce','Stan K','Joachim Dekkers','Phil Ng','Jack Boullier','Rajesh Lalwani','Dario Albini','ORT G','oguz yilmazer','George B','Cathy Kerr','Jonathan','Fred','Phil Steez','Skip','Tieu Ha','Stuart Robb','Zoran Samardzija','Nick Jones','Greg','Saf','Ian Mackay','Johnny','Stephan DLH Bengel','borneo','Daniel Ashton','Kirill','Mik Michael Krist','Tomas Boda','Mhd Na','Rikhi DSouza','Guus','Ryan Wilkinson','Daimaoh D','Lucy Travega','Michele','Welbert','Arwen','Maurice','Ferdinand','goINTO','Shaneoconnell','Joey Straube','Helvijs Smits','Ghafoor','Bianca','Jason','Jun Seong So','Scott Odonohue','Micosito','Freddy Z','mikeXeast','d.1110@','Dor','Kory','Tony Mclbs','Alexx','Marlonkarda','Toliva','lauragruia','Jamie Matthews','Jz Kz','Oleksandr','Jan','Kung Fu Panda','james','nongsiej','Longhornlove','m4ybee','Michal','Felipe Estrada','Kevin Putty','Ben Hewson','Chris Cook','Glen Richardson','andreizamfirache','Bobby','adritrading','Alvares Lopes','Aymany88','Crypto Infosistemas','David Pinkerton','Forclu','Leandro Razevedo','Sammy Hoang','Simon','Tasevv','Waleede','alex8881','abfarooq','maxnyny','Lars','Adam Wantoch','MinionPoPo','amandvv','Fakhru Razi','77gav77','@hakimijamaludin','jahmaiker','JP','John Roldan','jtrunz','kalyan','Kim Jakobsen','urangatan','mattirvin','Sebastian Prieto','Jayz Rolo','birtrader','Shaif','salmonic100','Simatomas','phoenix']}";
+            var result = JsonConvert.DeserializeObject<GetUsernamesResponse>(response);
+
+            Assert.True(result.Payload.Count>5);
+        }
+    }
+}

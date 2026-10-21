@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Common.SqlDataAccess\Core.Common.SqlDataAccess.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release goto :exit&#xD;&#xA;cd $(ProjectDir)&#xD;&#xA;copy /y bin\Debug\netcoreapp2.2\*.dll ..\Mentor.telegram.bot.sdk\dlls&#xD;&#xA;copy /y bin\Debug\netcoreapp2.2\*.pdb ..\Mentor.telegram.bot.sdk\dlls&#xD;&#xA; :exit" />
+  </Target>
+
+</Project>

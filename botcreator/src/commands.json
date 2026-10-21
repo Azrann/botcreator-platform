@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "scaffold-db": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "-ExecutionPolicy Bypass -NonInteractive -File BotCreator.Api\\Tasks\\scaffold-db.ps1"
+    }
+  }
+}

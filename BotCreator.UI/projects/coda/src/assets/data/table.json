@@ -1,0 +1,26 @@
+[
+	{
+		"Person"  : "Ronald Hilbert",
+		"Position": "developer",
+		"Phone"   :	"REPLACE_WITH_YOUR_VALUE",
+		"Email"   : "user@example.invalid"
+	},
+	{
+		"Person"  : "Angela Simpson",
+		"Position": "digital artist",
+		"Phone"   :	"REPLACE_WITH_YOUR_VALUE",
+		"Email"   : "user@example.invalid"
+	},
+	{
+		"Person"  : "Richard Franson",
+		"Position": "art director",
+		"Phone"   :	"REPLACE_WITH_YOUR_VALUE",
+		"Email"   : "user@example.invalid"
+	},
+	{
+		"Person"  : "David Robertson",
+		"Position": "developer",
+		"Phone"   :	"REPLACE_WITH_YOUR_VALUE",
+		"Email"   : "user@example.invalid"
+	}
+]

@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12 col-md-6">
+        <tc-card [title]="'Bot activity'">
+            <canvas baseChart [datasets]="chartData2" [labels]="lineChartLabels" [options]="lineChartOptions"
+                [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+        </tc-card>
+    </div>
+
+    <div class="col-12 col-md-6">
+        <tc-card [title]="'Users activity'">
+            <canvas baseChart [datasets]="chartData1" [labels]="barChartLabels" [options]="barChartOptions"
+                [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+        </tc-card>
+    </div>
+</div>

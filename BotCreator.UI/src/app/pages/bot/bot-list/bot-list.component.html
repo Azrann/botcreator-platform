@@ -1,0 +1,83 @@
+<tc-table [rows]="userBots" [config]="config" class="mb-4 bot__pc">
+    <tc-column [columnTitle]="'Name'" [columnName]="'name'">
+        <ng-template #tableBodyTemplate let-value>
+            <span class="nowrap">
+                <button class="bot__name" tc-button (click)="onBotNameClick(value)"
+                    [view]="'default'">{{value}}</button>
+            </span>
+        </ng-template>
+    </tc-column>
+    <tc-column [columnTitle]="'Template'" [columnName]="'template'"></tc-column>
+    <tc-column [columnTitle]="'Status'" [columnName]="'status'"> </tc-column>
+
+    <tc-column [columnTitle]="'Action'" [columnName]="'action'">
+        <ng-template #tableBodyTemplate let-value let-row="row">
+            <span class="nowrap">
+                <tc-dropdown class="item" [close]="closeActionDropdown">
+                    <tc-dropdown-button>
+                        <tc-icon [iconClass]="'icofont-settings-alt'" [tcFontSize]="20"
+                            [tcColor]="['inherit', '#FF8534']">
+                        </tc-icon>
+                    </tc-dropdown-button>
+
+                    <tc-dropdown-content [width]="'120px'" [appendToBody]="true" [align]="'right'" [animation]="'fade'">
+                        <tc-list class="mb-0">
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onEditAction(row)">Edit</a>
+                            </tc-list-item>
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onRemoveAction(row)">Remove</a>
+                            </tc-list-item>
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onTestAction(row)">Test</a>
+                            </tc-list-item>
+                        </tc-list>
+                    </tc-dropdown-content>
+                </tc-dropdown>
+            </span>
+        </ng-template>
+    </tc-column>
+
+    <tc-column [columnTitle]="''" [columnName]="'isActive'">
+        <ng-template #tableBodyTemplate let-value let-row="row">
+            <span class="nowrap">
+                <button tc-button [size]="'sm'" [view]="'warning'" [load]="row.isActivating"
+                    (click)="toggleActivation(row)">{{row.isActive?'DeActivate': 'Activate'}}</button>
+            </span>
+        </ng-template>
+    </tc-column>
+</tc-table>
+
+<tc-table [rows]="userBots" [config]="config" class="mb-4 bot__mobile">
+    <tc-column [columnTitle]="'Name'" [columnName]="'name'">
+        <ng-template #tableBodyTemplate let-value>
+            <span class="nowrap">
+                <button class="bot__name" tc-button (click)="onBotNameClick(value)"
+                    [view]="'default'">{{value}}</button>
+            </span>
+        </ng-template>
+    </tc-column>
+    <tc-column [columnTitle]="'Template'" [columnName]="'template'"></tc-column>
+    <tc-column [columnTitle]="'Status'" [columnName]="'status'"> </tc-column>
+    <tc-column [columnTitle]="''" [columnName]="'action'">
+        <ng-template #tableBodyTemplate let-value let-row="row">
+            <span class="nowrap">
+                <tc-dropdown class="item" [close]="closeActionDropdown">
+                    <tc-dropdown-button>
+                        <tc-icon [iconClass]="'icofont-settings-alt'" [tcFontSize]="20"
+                            [tcColor]="['inherit', '#FF8534']">
+                        </tc-icon>
+                    </tc-dropdown-button>
+
+                    <tc-dropdown-content [width]="'120px'" [appendToBody]="true" [align]="'right'" [animation]="'fade'">
+                        <tc-list class="mb-0">
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onEditAction(row)">Edit</a>
+                            </tc-list-item>
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onRemoveAction(row)">Remove</a>
+                            </tc-list-item>
+                            <tc-list-item><a href="#" (click)="$event.preventDefault(); onTestAction(row)">Test</a>
+                            </tc-list-item>
+                        </tc-list>
+                    </tc-dropdown-content>
+                </tc-dropdown>
+            </span>
+        </ng-template>
+    </tc-column>
+</tc-table>

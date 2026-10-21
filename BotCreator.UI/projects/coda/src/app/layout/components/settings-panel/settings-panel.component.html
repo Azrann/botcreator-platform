@@ -1,0 +1,75 @@
+<div class="title-box">
+	<h4 class="title">Settings</h4>
+</div>
+
+<div class="switcher-box">
+	<div class="switcher-block">
+		<tc-form-group>
+			<tc-form-label>Layout</tc-form-label>
+			<tc-select 
+				(valueSelected)="setLayout($event)" 
+				[selected]="getSelectedLayout()"
+				[placeholder]="'Select Layout'" 
+				[options]="layouts"
+				[borderColor]="'#ffffff4d'"
+			></tc-select>
+		</tc-form-group>
+
+		<tc-form-group>
+			<tc-form-label>Content width</tc-form-label>
+			<tc-select 
+				(valueSelected)="setLayoutType($event)" 
+				[selected]="getSelectedWidth()"
+				[placeholder]="'Select layout type'"
+				[options]="layoutOptions"
+				[borderColor]="'#ffffff4d'"
+			></tc-select>
+		</tc-form-group>
+
+		<tc-form-label>Topbar color</tc-form-label>
+		<div class="switcher">
+			<button 
+				tc-button	
+				*ngFor="let option of menuOptions" 
+				(click)="setMenuStyle(option)" 
+				[tcBgColor]="option.color" 
+				[ngClass]="{'active': option.selected}"
+			></button>
+		</div>
+	</div>
+
+	<div *ngIf="selectedLayout == 'horizontal'" class="switcher-block">
+		<tc-form-label>Horizontal navbar color</tc-form-label>
+		<div class="switcher">
+			<button 
+				tc-button	
+				*ngFor="let option of horizontalNavOptions" 
+				(click)="setHorizontalNavStyle(option)" 
+				[tcBgColor]="option.color" 
+				[ngClass]="{ 'active': option.selected }"
+			></button>
+		</div>
+	</div>
+
+	<div *ngIf="selectedLayout == 'vertical'" class="switcher-block">
+		<tc-form-label>Vertical nav color</tc-form-label>
+		<div class="switcher">
+			<button 
+				tc-button	
+				*ngFor="let option of verticalNavOptions" 
+				(click)="setVerticalNavStyle(option)" 
+				[tcBgColor]="option.color" 
+				[ngClass]="{ 'active': option.selected }"
+			></button>
+		</div>
+	</div>
+
+	<div class="switcher-block">
+		<tc-form-group>
+			<tc-form-label>Display topbar search</tc-form-label>
+			<tc-switcher [value]="true" (valueChanged)="setSearchState($event)"></tc-switcher>
+		</tc-form-group>
+	</div>
+</div>
+
+<button class="toggle-btn" tc-button (click)="setRightOffset()" [beforeIcon]="'icofont-gears'"></button>

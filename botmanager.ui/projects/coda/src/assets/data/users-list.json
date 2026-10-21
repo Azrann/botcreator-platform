@@ -1,0 +1,118 @@
+[
+	{
+		"name": "Charles Sutton",
+		"tag": "company",
+		"email": "user@example.invalid",
+		"img": "../../../../assets/content/avatar-176-10.jpg",
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester",
+		"birthDate": "April 7",
+		"labels": [
+			"Competitors"
+		]
+	},
+	{
+		"name": "Elsie Allen",
+		"img": "../../../../assets/content/avatar-176-11.jpg",
+		"tag": "company",
+		"email": "user@example.invalid",
+		"labels": [
+			"Clients","Suppliers"
+		],
+		"role": "Developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester",
+		"birthDate": "April 7"
+	},
+	{
+		"name": "Collin Nixon",
+		"img": "../../../../assets/content/avatar-176-6.jpg",
+		"tag": "company",
+		"email": "user@example.invalid",
+		"labels": [
+			"Clients"
+		],
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester",
+		"birthDate": "April 7"
+	},
+	{
+		"name": "Jamie Spencer",
+		"tag": "company",
+		"img": "../../../../assets/content/avatar-176-5.jpg",
+		"email": "user@example.invalid",
+		"labels": [
+			"Clients","Competitors"
+		],
+		"role": "Manager",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Washington",
+		"birthDate": "December 16"
+	},
+	{
+		"name": "Taylor Shaw",
+		"tag": "personal",
+		"img": "../../../../assets/content/avatar-176-8.jpg",
+		"email": "user@example.invalid",
+		"labels": [
+			"Clients","Suppliers"
+		],
+		"role": "Backend developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Paris",
+		"birthDate": "October 16"
+	},{
+		"name": "Alexander Blair",
+		"tag": "personal",
+		"img": "../../../../assets/content/avatar-176-1.jpg",
+		"email": "user@example.invalid",
+		"labels": [
+			"Clients"
+		],
+		"role": "Frontend developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London",
+		"birthDate": "May 12"
+	},
+	{
+		"name": "Jessa Garrison",
+		"tag": "team",
+		"img": "../../../../assets/content/avatar-176-3.jpg",
+		"email": "user@example.invalid",
+		"labels": [
+			"Competitors"
+		],
+		"role": "Software Engineer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London",
+		"birthDate": "August 21"
+	},
+	{
+		"name": "Mell Russell",
+		"tag": "team",
+		"img": "../../../../assets/content/avatar-176-2.jpg",
+		"email": "user@example.invalid",
+		"labels": [
+			"Suppliers"
+		],
+		"role": "Manager",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Madrid",
+		"birthDate": "July 12"
+	},
+	{
+		"name": "Bethany Morgan",
+		"tag": "team",
+		"img": "../../../../assets/content/avatar-176-9.jpg",
+		"email":"user@example.invalid",
+		"labels": [
+			"Clients","Suppliers"
+		],
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London",
+		"birthDate": "May 27"
+	}
+]

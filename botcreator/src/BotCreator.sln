@@ -1,0 +1,54 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCreator.Api", "BotCreator.Api\BotCreator.Api.csproj", "{26D4518A-9127-45E8-B1E8-C7BA23F50ED3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCreator.Service", "BotCreator.Service\BotCreator.Service.csproj", "{FCC1F937-8572-401C-A9E6-190BE2AA3011}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCreator.Core", "BotCreator.Model\BotCreator.Core.csproj", "{BD236886-0C7F-4EB8-9D00-8CED1F163CB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCreator.Infrastructure", "BotCreator.Infrastructure\BotCreator.Infrastructure.csproj", "{5F55B068-3ABC-4A6A-924C-05F9806DD4D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0B8AD10C-CB4D-4584-915A-711BDBB3E624}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCreator.Service.Test", "BotCreator.Service.Test\BotCreator.Service.Test.csproj", "{D1F83DF2-63DA-4E15-AF93-7EB9F2205623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26D4518A-9127-45E8-B1E8-C7BA23F50ED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D4518A-9127-45E8-B1E8-C7BA23F50ED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D4518A-9127-45E8-B1E8-C7BA23F50ED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D4518A-9127-45E8-B1E8-C7BA23F50ED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC1F937-8572-401C-A9E6-190BE2AA3011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC1F937-8572-401C-A9E6-190BE2AA3011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC1F937-8572-401C-A9E6-190BE2AA3011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC1F937-8572-401C-A9E6-190BE2AA3011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD236886-0C7F-4EB8-9D00-8CED1F163CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD236886-0C7F-4EB8-9D00-8CED1F163CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD236886-0C7F-4EB8-9D00-8CED1F163CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD236886-0C7F-4EB8-9D00-8CED1F163CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F55B068-3ABC-4A6A-924C-05F9806DD4D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F55B068-3ABC-4A6A-924C-05F9806DD4D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F55B068-3ABC-4A6A-924C-05F9806DD4D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F55B068-3ABC-4A6A-924C-05F9806DD4D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1F83DF2-63DA-4E15-AF93-7EB9F2205623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F83DF2-63DA-4E15-AF93-7EB9F2205623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F83DF2-63DA-4E15-AF93-7EB9F2205623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F83DF2-63DA-4E15-AF93-7EB9F2205623}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1F83DF2-63DA-4E15-AF93-7EB9F2205623} = {0B8AD10C-CB4D-4584-915A-711BDBB3E624}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D30230A-048F-4E19-BDE9-DE9FCF321539}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Dashboards",
+        "icon": "icofont-chart-bar-graph",
+        
+        "sub": [
+            {
+                "title": "Default",
+                "routing": "/vertical/dashboard",
+                "active": true
+            }
+        ]
+    },
+    {
+        "title": "Events",
+        "icon": "icofont-database",
+        "routing": "/vertical/events"
+    },
+    {
+        "title": "Create",
+        "icon": "icofont-plus-circle",
+        "badge": "1",
+        "badgeView": "success",
+       
+        "sub": [
+            {
+                "title": "Service Bot",
+                "routing": "/vertical/bot/service-bot/new"
+            }
+        ]
+    },
+    {
+        "title": "My Bots",
+        "routing": "/vertical/bot/list",
+        "icon": "icofont-brand-android-robot"
+    }
+]

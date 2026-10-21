@@ -1,0 +1,78 @@
+<div class="layout-wrap">
+    <nav-bar [view]="topbarStyle" [ngClass]="{ 'side-open': openedSidebar }" [boxed]="boxed">
+        <div class="nav-content">
+            <div class="row">
+                <div class="col col-auto toggle-button-col">
+                    <div class="toggle-sidebar" (click)="toggleMenu($event, openedSidebar)">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div class="col title-col">
+                    <h1 class="page-title">
+                        {{ pageTitle }}
+                    </h1>
+                </div>
+
+                <div class="col col-auto actions-col">
+                    <div class="nav-actions">
+                        <app-language-selector></app-language-selector>
+
+                        <tc-dropdown class="item" [close]="closeDropdown">
+                            <tc-dropdown-button>
+                                <tc-icon [iconClass]="'icofont-user'" [tcFontSize]="20"
+                                    [tcColor]="['inherit', '#FF8534']"></tc-icon>
+                            </tc-dropdown-button>
+
+                            <tc-dropdown-content [align]="'right'" [animation]="'fadeInUp'" [offset]="[16, 0]"
+                                [width]="180">
+                                <div class="author-info">
+                                    <img src="/assets/default-avatar.jpg" height="50" width="50" [tcShape]="'50%'">
+
+                                    <h4 class="author-name">{{userFullName}}</h4>
+                                </div>
+
+                                <ul class="list">
+                                    <li>
+                                        <a href="#"
+                                            (click)="onUserProfileSelect($event);">
+                                            <tc-icon [iconClass]="'icofont-id'" [tcFontSize]="20" [padding]="0">
+                                            </tc-icon>
+                                            Account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" (click)="logOut($event);">
+                                            <tc-icon [iconClass]="'icofont-exit'" [tcFontSize]="20" [padding]="0">
+                                            </tc-icon>
+                                            Log Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </tc-dropdown-content>
+                        </tc-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav-bar>
+
+    <side-bar [view]="verticalNavStyle" #sideBar>
+        <logo [src]="'/assets/botcreator.png'" [height]="40" [width]="178"></logo>
+
+        <bot-menu malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
+        </bot-menu>
+    </side-bar>
+
+    <main class="main">
+        <div class="content-container" [ngClass]="{ 'boxed': boxed }">
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+        <footer [ngClass]="{ 'boxed': boxed } "></footer>
+    </main>
+</div>

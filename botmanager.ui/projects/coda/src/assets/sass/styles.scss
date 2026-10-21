@@ -1,0 +1,20 @@
+@import '/variables';
+@import '/fonts';
+@import '/typography';
+@import '/helpers';
+
+html {
+	background: $primary-bg;
+	color: $default-color;
+	font-family: $main-ff;
+	font-size: 16px;
+	height: 100%;
+}
+body {
+	height: 100%;
+	overflow-x: hidden;
+}
+app {
+  display: block;
+  height: 100%;
+}

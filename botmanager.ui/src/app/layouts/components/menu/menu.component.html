@@ -1,0 +1,103 @@
+<ul class="menu-ul">
+	<li
+    class="menu-item"
+    *ngFor="let item of menuItems"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    #rla="routerLinkActive"
+    [ngClass]="{
+      'has-sub': item.sub,
+      'active': (item.active || rla.isActive),
+      'full-sub': (item.subSections && item.subSections > 2)
+    }"
+  >
+    <!-- Group title -->
+		<div class="group-title" *ngIf="item.groupTitle">{{ item.title }}</div>
+    <!-- end Group title -->
+
+    <ng-container *ngIf="!item.groupTitle">
+      <!-- Simple item -->
+      <ng-container *ngIf="!item.sub">
+        <a
+          class="item-link"
+          routerLink="{{ item.routing }}"
+        >
+          <tc-icon
+            class="link-icon"
+            [iconClass]="item.icon"
+            [tcShape]="'50%'"
+            [tcFontSize]="14"
+            [padding]="8"
+          ></tc-icon>
+
+          <span class="link-text">{{ item.title }}</span>
+
+          <tc-badge class="link-badge" [size]="'sm'" [view]="item.badgeView" *ngIf="item.badge">
+            {{ item.badge }}
+          </tc-badge>
+        </a>
+      </ng-container>
+      <!-- end Simple item -->
+
+      <!-- Sub item -->
+      <ng-container *ngIf="item.sub">
+        <a
+          href="#"
+          class="item-link"
+          (click)="toggle($event, item)"
+        >
+          <tc-icon
+            class="link-icon"
+            [iconClass]="item.icon"
+            [tcShape]="'50%'"
+            [tcFontSize]="14"
+            [padding]="8"
+          ></tc-icon>
+
+          <span class="link-text">{{ item.title }}</span>
+
+          <tc-badge class="link-badge" [size]="'sm'" [view]="item.badgeView" *ngIf="item.badge">
+            {{ item.badge }}
+          </tc-badge>
+
+          <span class="link-caret icofont-double-right"></span>
+        </a>
+
+        <ul class="sub" [@subAppear]="subState(rla.isActive || item.active)" *ngIf="!item.subSections">
+          <li
+            class="menu-item"
+            *ngFor="let itemSub of item.sub"
+            routerLinkActive="active"
+          >
+            <a routerLink="{{ itemSub.routing }}" class="item-link">
+              <span class="link-text">{{ itemSub.title }}</span>
+            </a>
+          </li>
+        </ul>
+
+        <ng-container *ngIf="item.subSections">
+          <ul class="sub sub-with-sections" [@subAppear]="subState(rla.isActive || item.active)" *ngIf="item.subSections">
+            <li *ngFor="let section of item.sub" class="sub-section">
+              <ul>
+                <li class="menu-item" *ngIf="section.sectionTitle">
+                  <div class="group-title">{{ section.sectionTitle }}</div>
+                </li>
+
+                <li
+                  class="menu-item"
+                  *ngFor="let itemSub of section.subSection"
+                  routerLinkActive="active"
+                >
+                  <a routerLink="{{ itemSub.routing }}" class="item-link">
+                    <span class="link-text">{{ itemSub.title }}</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-container>
+      <!-- end Sup item -->
+    </ng-container>
+	</li>
+</ul>

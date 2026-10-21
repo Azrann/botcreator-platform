@@ -1,0 +1,13 @@
+<tc-table [rows]="rows" [pagination]="true" [itemsPerPage]="'10'">
+    <tc-column [columnTitle]="'Name'" [columnName]="'name'" [enableFiltering]="false" [enableSorting]="true">
+        <ng-template #tableBodyTemplate let-value> <span class="nowrap"> {{ value }}</span>
+        </ng-template>
+    </tc-column>
+    <tc-column [columnTitle]="'UserName'" [columnName]="'username'" [enableFiltering]="false"></tc-column>
+    <tc-column [columnTitle]="'CreatedOn'" [columnName]="'createdOn'" [enableFiltering]="false" [enableSorting]="true">
+        <ng-template #tableBodyTemplate let-value> <span class="nowrap"> {{ value | date:'medium' }}</span>
+        </ng-template>
+    </tc-column>
+
+    <tc-column [columnTitle]="'Text'" [enableFiltering]="false" [columnName]="'text'"></tc-column>
+</tc-table>

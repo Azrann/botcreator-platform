@@ -1,0 +1,73 @@
+[
+	{	"number": "1",
+			"img": "assets/content/avatar-55-3.jpg",
+			"person": "Angela Simpson",
+			"position": "digital artist",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "2",
+			"img": "assets/content/avatar-55-5.jpg",
+			"person": "Richard Franson",
+			"position": "art director",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "3",
+			"img": "assets/content/avatar-55-4.jpg",
+			"person": "David Robertson",
+			"position": "developer",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "4",
+			"img": "assets/content/avatar-55-11.jpg",
+			"person": "Jayden Doyle",
+			"position": "manager",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "5",
+			"img": "assets/content/avatar-55-6.jpg",
+			"person": "Chance Blankenship",
+			"position": "designer",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{	
+			"number": "6",
+			"img": "assets/content/avatar-55-8.jpg",
+			"person": "Isaac Dawson",
+			"position": "designer",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "7",
+			"img": "assets/content/avatar-55-10.jpg",
+			"person": "Richard Franson",
+			"position": "art director",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "8",
+			"img": "assets/content/avatar-55-1.jpg",
+			"person": "David Robertson",
+			"position": "developer",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	},
+	{
+			"number": "9",
+			"img": "assets/content/avatar-55-12.jpg",
+			"person": "Sara Odom",
+			"position": "manager",
+			"phone" : 	"REPLACE_WITH_YOUR_VALUE",
+			"email" : "user@example.invalid"
+	}
+]

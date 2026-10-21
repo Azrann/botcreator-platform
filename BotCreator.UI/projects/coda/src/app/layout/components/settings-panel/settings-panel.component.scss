@@ -1,0 +1,80 @@
+@import "../../../../assets/sass/variables"; //CHANGED
+
+$_animation: $animation;
+$_panel-width: 28 * $module;
+$_nav-height: 11 * $module-rem;
+
+:host {
+	background: #2c435b;
+	border-left: 1px solid main-palette(500);
+	color: #fff;
+	display: block;
+	position: fixed;
+	right: -$_panel-width;
+	height: 100vh;
+	top: 0;
+	transition: right .3s $_animation;
+	width: $_panel-width;
+	z-index: 9999;
+
+	.title-box {
+		align-items: center;
+		background: main-palette(500);
+		display: flex;
+		height: $nav-bar-height;
+		justify-content: center;
+
+		.title {
+			font-size: 1.5em;
+			margin: 0;
+			color: #fff;
+		}
+	}
+	.switcher-box {
+		align-items: stretch;
+		display: flex;
+		flex-direction: column;
+		
+		.switcher-block {
+			align-items: stretch;
+			display: flex;
+			flex-direction: column;
+			padding: 2 * $module-rem;
+
+			.switcher {
+				display: flex;
+				flex-direction: row;
+
+				button {
+					border: 1px solid #e4e4e4;
+					height: 20px;
+					margin-left: $module-rem;
+					width: 20px;
+					
+					&.active {
+						&:before {
+							background: accent-palette(500);
+							display: block;
+							position: absolute;
+							border-radius: 50%;
+							content: '';
+							left: -2px;
+							height: 5px;
+							top: -2px;
+							width: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.toggle-btn {
+		font-size: 1.5em;
+		left: -55px;
+		position: fixed;
+		padding: 7px;
+		position: absolute;
+		top: 300px;
+		z-index: inherit;
+	}
+}

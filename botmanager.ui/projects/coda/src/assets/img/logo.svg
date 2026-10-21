@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="178px" height="40px" viewBox="0 0 178 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M30.0746504,2.71904238 L20,19.9950361 L30.0748229,37.2808569 C27.1162429,39.0094495 23.6737992,40 20,40 C8.954305,40 0,31.045695 0,20 C0,8.954305 8.954305,0 20,0 C23.6737278,0 27.1161091,0.990511999 30.0746504,2.71904238 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo">
+            <g id="a" transform="translate(140.000000, 2.000000)" stroke="#F3F2F2" stroke-width="4">
+                <path d="M36,36 L36,21" id="Line" stroke-linecap="square"></path>
+                <circle cx="18" cy="18" r="18"></circle>
+            </g>
+            <g id="d" transform="translate(94.000000, 2.000000)" stroke="#F3F2F2" stroke-width="4">
+                <path d="M36,17 L36,0" id="Line" stroke-linecap="square"></path>
+                <circle cx="18" cy="18" r="18"></circle>
+            </g>
+            <g id="o" transform="translate(48.000000, 2.000000)" stroke="#F3F2F2" stroke-width="4">
+                <circle cx="18" cy="18" r="18"></circle>
+            </g>
+            <g id="c">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#FF8534" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

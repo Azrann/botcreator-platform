@@ -1,0 +1,11 @@
+<tc-card [title]="'Removing bot ' + botName">
+    <form (ngSubmit)="removeBot()" novalidate>
+        <div class="row">
+            <div class="col-sm-5 offset-sm-3">
+                <button tc-button [block]="true" [view]="'error'">
+                    Confirm
+                </button>
+            </div>
+        </div>
+    </form>
+</tc-card>

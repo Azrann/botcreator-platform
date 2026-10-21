@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mentor.telegram.bot.sdk" Version="1.2.19" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3-beta1" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="Sendgrid" Version="9.12.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BotCreator.Infrastructure\BotCreator.Infrastructure.csproj" />
+    <ProjectReference Include="..\BotCreator.Model\BotCreator.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Core.Common.NoSqlDataAccess">
+      <HintPath>..\..\..\mentor.telegram.bot\src\Mentor.telegram.bot\Core.Common.NoSqlDataAccess\bin\Release\netcoreapp2.2\Core.Common.NoSqlDataAccess.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\EmbeddedHtmlTest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Assets\EmbeddedHtml.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="EmailProviders\Templates\ForgetPassword.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

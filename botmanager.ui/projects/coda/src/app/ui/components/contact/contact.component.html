@@ -1,0 +1,27 @@
+<div class="contact-wrapper">
+	<tc-card>
+		<div class="contact">
+			<div class="img-section">
+				<div class="contact-img">
+					<img src="{{ contact.img }}" alt="">
+				</div>
+
+				<h3 class="contact-name">{{ contact.name }}</h3>
+				<span class="contact-role">{{ contact.role }}</span>
+			</div>
+		
+			<div class="contact-item">
+				<span>Phone:</span>
+				<span>{{ contact.phone }}</span>
+			</div>
+			<div class="contact-item">
+				<span>Email:</span>
+				<span><a href="#">{{ contact.email }}</a></span>
+			</div>
+			<div class="contact-item">
+				<span>Location:</span>
+				<span>{{ contact.location }}</span>
+			</div>
+		</div>
+	</tc-card>
+</div>

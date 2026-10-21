@@ -1,0 +1,5 @@
+<div class="progress">
+	<div class="bar" [ngStyle]="{'width': innerProgress + '%', 'background': color}">
+		<p *ngIf="label" class="label"> {{ progress }}% </p> 
+	</div>
+</div>

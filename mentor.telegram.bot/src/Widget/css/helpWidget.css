@@ -1,0 +1,618 @@
+#helpWidget {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    display: block;
+    max-width: calc(100% - 2em);
+    width: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+#helpWidget *:after, #helpWidget *:before{
+    box-sizing: border-box;
+}
+
+#helpWidget p {
+    font-size: 14px !important;
+    margin: 0;
+    padding: 0;
+}
+
+#helpWidget .grey_svg {
+    fill: #424D57;
+}
+#helpWidget .grey_svg:hover {
+    fill: #858585;
+}
+
+#helpWidget button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: 'Arial', serif;
+    display: inline-block;
+    text-transform: inherit;
+    font-size: 12px;
+    letter-spacing: initial;
+    text-align: center;
+    padding:0;
+    margin: 0!important;
+}
+
+#helpWidget .helpWidget_main_avatar {
+    display: flex;
+}
+
+#helpWidget .helpWidget_main_avatar_wrapper {
+    margin-right: 5px;
+}
+
+#helpWidget .personal_credentials, #helpWidget .personal_credentials .time {
+    font-size: 11px!important;
+}
+
+.helpWidget_feedback_buttons {
+    align-self: center;
+}
+
+.helpWidget_feedback_buttons button{
+    padding: 0.25em 0.5em!important;
+}
+
+#helpWidget .helpWidget_modal_head__bottom {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#helpWidget .helpWidget_main_avatar_info {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+#helpWidget .avatar {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+}
+
+#helpWidget .helpWidget_toggler {
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+#helpWidget .helpWidget_toggler button {
+    background-color: grey;
+    width: 65px;
+    height: 65px;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+#helpWidget .helpWidget_toggler img {
+    max-width: 100%;
+    position: relative;
+}
+
+#helpWidget .helpWidget_firstMessage {
+
+}
+
+#helpWidget .helpWidget_modal {
+    padding: 1em;
+    overflow: hidden;
+}
+
+#helpWidget .helpWidget_modal_inner {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    min-height: 250px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    overflow: hidden;
+}
+
+#helpWidget .head_btn {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#helpWidget .close_widget > svg {
+    fill: black
+}
+
+#helpWidget .helpWidget_modal_head {
+    background-color: #ffffff;
+    flex-grow: 0;
+    text-align: center;
+    padding: 0.5rem 1rem 0;
+    line-height: 1.5;
+}
+
+#helpWidget .helpWidget_modal_head__top {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#helpWidget .helpWidget_modal_body {
+    background-color: #E9EEF4;
+    flex-basis: 300px;
+    flex-grow: 1;
+    padding: 0.5rem 1rem 100px;
+    position: relative;
+}
+
+#helpWidget .helpWidget_modal_body_btn_wrap {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    padding: 0 0.75em 1em;
+    box-sizing: border-box;
+}
+
+#helpWidget .helpWidget_modal_body_btn_wrap .helpWidget_main_avatar_wrapper{
+    padding-top: 8px;
+}
+
+#helpWidget button.helpWidget_custom-button {
+    width: 100%;
+    padding: 0.5em;
+    min-height: 40px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+#helpWidget button.helpWidget_custom-button:hover {
+    box-shadow: 1px 1px 5px rgba(150, 150, 150, 0.7);
+}
+
+#helpWidget .helpWidget_person {
+    display: flex;
+    padding-right: 5px;
+    text-align: -webkit-left;
+}
+
+#helpWidget .helpWidget_person:nth-child(2n) {
+    flex-direction: row-reverse;
+    text-align: -webkit-right;
+}
+
+#helpWidget .helpWidget_person:nth-child(2n) .personal_credentials {
+    text-align: right;
+}
+
+#helpWidget .helpWidget_person_avatar_wrapper {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: white;
+    overflow: hidden;
+}
+#helpWidget .helpWidget_person_avatar_wrapper .avatar {
+    max-width: 100%;
+    max-height: 100%;
+}
+#helpWidget .helpWidget_person_avatar {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7em;
+    line-height: 1.6em;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    margin: 0 0.3em;
+}
+
+#helpWidget .helpWidget_person_messages {
+    padding-top: 5px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+#helpWidget .helpWidget_person_message {
+    box-sizing: border-box;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    margin: 0.5em 0.25em 0.5em;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.5;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    width: fit-content;
+}
+
+#helpWidget .helpWidget_person_gif_message {
+    position: relative;
+    max-width: 60px;
+    line-height: 0;
+}
+
+#helpWidget .helpWidget_person_gif_message img {
+    max-width: 100%;
+}
+
+#helpWidget .helpWidget_message_view {
+    overflow-y: auto;
+    max-height: 320px;
+}
+
+#helpWidget .helpWidget_register_form {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 1em 0.5em;
+}
+
+#helpWidget .helpWidget_register_form label {
+    color: grey;
+    width: 100%;
+    margin-bottom: 0.75em;
+    display: block;
+}
+
+#helpWidget .helpWidget_register_form input {
+    margin-top: 0.25em;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid lightgray;
+    line-height: 40px;
+    padding: 0.5em;
+    border-radius: 5px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#helpWidget .helpWidget_chat_field {
+
+}
+
+#helpWidget .helpWidget_message_wrapper {
+    display: flex;
+    flex-basis: 100%;
+}
+
+#helpWidget .helpWidget_message_wrapper textarea {
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+    margin-right: -1px;
+    border-right: none;
+}
+
+#helpWidget .helpWidget_message_wrapper button {
+    width: 30px;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    margin: 0!important;
+    padding: 0.6em;
+}
+
+#helpWidget .helpWidget_message_wrapper button > img {
+    max-width: 100%;
+    position: relative;
+}
+
+#helpWidget .helpWidget_chat_field .chat_top_side {
+    display: flex;
+    justify-content: left;
+}
+
+#helpWidget .helpWidget_chat_field .helpWidget_chat_bottom_side {
+    text-align: right;
+}
+
+#helpWidget .btn_column {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+#helpWidget .btn_column button {
+    flex-grow: 1;
+    margin: 0.25em;
+}
+
+#helpWidget .btn-simple {
+    padding: 5px 2.5px;
+    min-height: 20px;
+    background-color: white;
+    color: black;
+    margin: 2.5px!important;
+    border: 1px solid rgba(155, 155, 155, 0.5);
+}
+
+#helpWidget .btn-simple:hover {
+    background-color: rgba(222, 222, 222, 0.5);
+}
+
+#helpWidget .helpWidget_chat_field .helpWidget_chat_bottom_side .btn-simple {
+    width: 100%;
+}
+
+#helpWidget textarea {
+    resize: none;
+    min-height: 50px;
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    height: auto;
+    z-index: auto;
+    position: relative;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    color: #495057;
+}
+
+/*Carousel*/
+#helpWidget .helpWidget_csscarousel {
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+}
+
+#helpWidget .helpWidget_csscarousel > input {
+    display: none;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(10):checked ~ ul li:first-of-type {
+    margin-left: -900%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(9):checked ~ ul li:first-of-type {
+    margin-left: -800%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(8):checked ~ ul li:first-of-type {
+    margin-left: -700%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(7):checked ~ ul li:first-of-type {
+    margin-left: -600%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(6):checked ~ ul li:first-of-type {
+    margin-left: -500%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(5):checked ~ ul li:first-of-type {
+    margin-left: -400%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(4):checked ~ ul li:first-of-type {
+    margin-left: -300%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(3):checked ~ ul li:first-of-type {
+    margin-left: -200%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(2):checked ~ ul li:first-of-type {
+    margin-left: -100%;
+}
+
+#helpWidget .helpWidget_csscarousel > input:nth-of-type(1):checked ~ ul li:first-of-type {
+    margin-left: 0%;
+}
+
+#helpWidget .helpWidget_csscarousel > ul {
+    position: relative;
+    width: 100%;
+    min-height: 75px;
+    z-index: 3;
+    font-size: 0;
+    line-height: 0;
+    background: transparent;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#helpWidget .helpWidget_csscarousel > ul > li {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: initial;
+    line-height: normal;
+    -moz-transition: all 0.5s cubic-bezier(0.4, 1.3, 0.65, 1);
+    -o-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s cubic-bezier(0.4, 1.3, 0.65, 1);
+    transition: all 0.5s cubic-bezier(0.4, 1.3, 0.65, 1);
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+#helpWidget .helpWidget_csscarousel > ul > li img {
+    max-width: 100%;
+}
+
+#helpWidget .helpWidget_csscarousel > .arrows {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 100%;
+    height: 26px;
+    padding: 0 10px;
+    z-index: 2;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#helpWidget .helpWidget_csscarousel > .arrows label {
+    display: none;
+    position: absolute;
+    top: -50%;
+    padding: 6.5px;
+    box-shadow: inset 2px -2px 0 1px #424D57;
+    cursor: pointer;
+    -moz-transition: box-shadow 0.15s, margin 0.15s;
+    -o-transition: box-shadow 0.15s, margin 0.15s;
+    -webkit-transition: box-shadow 0.15s, margin 0.15s;
+    transition: box-shadow 0.15s, margin 0.15s;
+}
+
+#helpWidget .helpWidget_csscarousel > .arrows label:hover {
+    box-shadow: inset 2px -2px 0 1px #858585;
+}
+
+#helpWidget .helpWidget_csscarousel > .arrows label:before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    height: 300%;
+    width: 300%;
+}
+
+.helpWidget_csscarousel.infinity > input:first-of-type:checked ~ .arrows label.goto-last,
+.helpWidget_csscarousel > input:nth-of-type(1):checked ~ .arrows > label:nth-of-type(0),
+.helpWidget_csscarousel > input:nth-of-type(2):checked ~ .arrows > label:nth-of-type(1),
+.helpWidget_csscarousel > input:nth-of-type(3):checked ~ .arrows > label:nth-of-type(2),
+.helpWidget_csscarousel > input:nth-of-type(4):checked ~ .arrows > label:nth-of-type(3),
+.helpWidget_csscarousel > input:nth-of-type(5):checked ~ .arrows > label:nth-of-type(4),
+.helpWidget_csscarousel > input:nth-of-type(6):checked ~ .arrows > label:nth-of-type(5),
+.helpWidget_csscarousel > input:nth-of-type(7):checked ~ .arrows > label:nth-of-type(6),
+.helpWidget_csscarousel > input:nth-of-type(8):checked ~ .arrows > label:nth-of-type(7),
+.helpWidget_csscarousel > input:nth-of-type(9):checked ~ .arrows > label:nth-of-type(8),
+.helpWidget_csscarousel > input:nth-of-type(10):checked ~ .arrows > label:nth-of-type(9),
+.helpWidget_csscarousel > input:nth-of-type(11):checked ~ .arrows > label:nth-of-type(10) {
+    display: block;
+    left: 0;
+    right: auto;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.helpWidget_csscarousel.infinity > input:last-of-type:checked ~ .arrows label.goto-first,
+.helpWidget_csscarousel > input:nth-of-type(1):checked ~ .arrows > label:nth-of-type(2),
+.helpWidget_csscarousel > input:nth-of-type(2):checked ~ .arrows > label:nth-of-type(3),
+.helpWidget_csscarousel > input:nth-of-type(3):checked ~ .arrows > label:nth-of-type(4),
+.helpWidget_csscarousel > input:nth-of-type(4):checked ~ .arrows > label:nth-of-type(5),
+.helpWidget_csscarousel > input:nth-of-type(5):checked ~ .arrows > label:nth-of-type(6),
+.helpWidget_csscarousel > input:nth-of-type(6):checked ~ .arrows > label:nth-of-type(7),
+.helpWidget_csscarousel > input:nth-of-type(7):checked ~ .arrows > label:nth-of-type(8),
+.helpWidget_csscarousel > input:nth-of-type(8):checked ~ .arrows > label:nth-of-type(9),
+.helpWidget_csscarousel > input:nth-of-type(9):checked ~ .arrows > label:nth-of-type(10),
+.helpWidget_csscarousel > input:nth-of-type(10):checked ~ .arrows > label:nth-of-type(11),
+.helpWidget_csscarousel > input:nth-of-type(11):checked ~ .arrows > label:nth-of-type(12) {
+    display: block;
+    right: 0;
+    left: auto;
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+#helpWidget .helpWidget_csscarousel .carousel-item .carousel-item-image {
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    line-height: 0;
+    border-bottom: none;
+}
+
+#helpWidget .helpWidget_csscarousel .carousel-item .carousel-item-desc {
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    padding: 0.5em;
+    border-bottom: none;
+}
+#helpWidget .helpWidget_csscarousel .carousel-item-desc-head {
+    margin: 0.25rem 0;
+    color: black;
+    font-weight: bold;
+}
+#helpWidget .helpWidget_csscarousel .carousel-item-desc-body {
+    color: #c4c4c4;
+    font-weight: normal;
+    font-size: 90%;
+}
+
+#helpWidget .helpWidget_csscarousel .carousel-item .carousel-item-buttons {
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    padding: 0.5em 0.25em;
+}
+
+/*Carousel*/
+
+/*Accordion*/
+#helpWidget .helpWidget_accordion {
+    width: 100%;
+    /*margin: -0.5em -1em;*/
+}
+
+#helpWidget .helpWidget_accordion_body {
+    width: 100%;
+    text-align: left;
+    padding: 0 5px;
+    box-sizing: border-box;
+    /*transition: all 1s ease;*/
+    height: 0;
+    /*min-height: 0px;*/
+    margin-top: -1px;
+    overflow: hidden;
+}
+#helpWidget .helpWidget_accordion_item.active > .helpWidget_accordion_body{
+    height: auto;
+    /*min-height: 50px;*/
+}
+#helpWidget .helpWidget_accordion_item.active > .helpWidget_accordion_head ,#helpWidget .helpWidget_accordion_item .helpWidget_accordion_head:hover {
+    background-color: rgba(222, 222, 222, 0.5);
+}
+/*Accordion*/

@@ -1,0 +1,82 @@
+<tc-card [title]="'register.register'|translate" >
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp(signUpForm.valid)" novalidate>
+        <tc-form-group>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 text-md-right">
+                    <tc-form-label class="mb-md-0" [tcColor]="'#e24d4d'"
+                        *ngIf="signUpForm.controls.firstName.touched && signUpForm.controls.firstName.invalid">
+                        {{'register.firstName'|translate}} <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+
+                    <tc-form-label class="mb-md-0"
+                        *ngIf="!(signUpForm.controls.firstName.touched && signUpForm.controls.firstName.invalid)">
+                        {{'register.firstName'|translate}}<sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <tc-input [prefixIcon]="'icofont-id'" formControlName="firstName"></tc-input>
+                </div>
+            </div>
+        </tc-form-group>
+
+        <tc-form-group>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 text-md-right">
+                    <tc-form-label class="mb-md-0" [tcColor]="'#e24d4d'"
+                        *ngIf="signUpForm.controls.lastName.touched && signUpForm.controls.lastName.invalid">
+                        {{'register.lastName'|translate}} <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+
+                    <tc-form-label class="mb-md-0"
+                        *ngIf="!(signUpForm.controls.lastName.touched && signUpForm.controls.lastName.invalid)">
+                        {{'register.lastName'|translate}}<sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <tc-input [prefixIcon]="'icofont-invisible'" formControlName="lastName"></tc-input>
+                </div>
+            </div>
+        </tc-form-group>
+
+        <tc-form-group>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 text-md-right">
+                    <tc-form-label class="mb-md-0" [tcColor]="'#e24d4d'"
+                        *ngIf="signUpForm.controls.email.touched && signUpForm.controls.email.invalid">
+                        {{'register.email'|translate}} <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+
+                    <tc-form-label class="mb-md-0"
+                        *ngIf="!(signUpForm.controls.email.touched && signUpForm.controls.email.invalid)">
+                        {{'register.email'|translate}}
+                        <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <tc-input [type]="'email'" [prefixIcon]="'icofont-at'" formControlName="email"></tc-input>
+                </div>
+            </div>
+        </tc-form-group>
+
+        <tc-form-group>
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 text-md-right">
+                    <tc-form-label class="mb-md-0" [tcColor]="'#e24d4d'"
+                        *ngIf="signUpForm.controls.password.touched && signUpForm.controls.password.invalid">
+                        {{'register.password'|translate}} <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+
+                    <tc-form-label class="mb-md-0"
+                        *ngIf="!(signUpForm.controls.password.touched && signUpForm.controls.password.invalid)">
+                        {{'register.password'|translate}} <sup [tcColor]="'#e24d4d'">*</sup>:</tc-form-label>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <tc-input [type]="'password'" [prefixIcon]="'icofont-key'" formControlName="password">
+                    </tc-input>
+                </div>
+            </div>
+        </tc-form-group>
+
+        <button tc-button [block]="true" [view]="'info'" [beforeIcon]="'icofont-location-arrow'"
+            [disabled]="signUpForm.invalid" [load]="loadingsignUpForm">
+            {{'register.register'|translate}}
+        </button>
+    </form>
+</tc-card>

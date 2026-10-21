@@ -1,0 +1,14 @@
+<tc-dropdown class="item" [close]="closeDropdown">
+    <tc-dropdown-button>
+        <tc-icon [iconClass]="'icofont-world'" [tcFontSize]="20" [tcColor]="['inherit', '#FF8534']"></tc-icon>
+    </tc-dropdown-button>
+
+    <tc-dropdown-content [width]="'120px'" [appendToBody]="true" [align]="'right'" [animation]="'fade'">
+        <tc-list class="mb-0">
+            <tc-list-item><a href="#" (click)="onLanguageChange('en'); $event.preventDefault()">English</a>
+            </tc-list-item>
+            <tc-list-item><a href="#" (click)="onLanguageChange('es'); $event.preventDefault()">Spanish</a>
+            </tc-list-item>
+        </tc-list>
+    </tc-dropdown-content>
+</tc-dropdown>

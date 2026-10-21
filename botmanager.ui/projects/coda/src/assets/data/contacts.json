@@ -1,0 +1,76 @@
+[
+	{
+		"name": "Charles Sutton",
+		"email": "user@example.invalid",
+		"img": "../../../../assets/content/avatar-132-10.jpg",
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester"
+	},
+	{
+		"name": "Elsie Allen",
+		"img": "../../../../assets/content/avatar-132-11.jpg",
+		"email": "user@example.invalid",
+		"role": "Developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester"
+	},
+	{
+		"name": "Collin Nixon",
+		"img": "../../../../assets/content/avatar-132-6.jpg",
+		"email": "user@example.invalid",
+		
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Manchester"
+	},
+	{
+		"name": "Jamie Spencer",
+		"img": "../../../../assets/content/avatar-132-5.jpg",
+		"email": "user@example.invalid",
+		"role": "Manager",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Washington"
+	},
+	{
+		"name": "Taylor Shaw",
+		"img": "../../../../assets/content/avatar-132-8.jpg",
+		"email": "user@example.invalid",
+		"role": "Backend developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Paris"
+	},
+	{
+		"name": "Alexander Blair",
+		"img": "../../../../assets/content/avatar-132-1.jpg",
+		"email": "user@example.invalid",
+		"role": "Frontend developer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London"
+	},
+	{
+		"name": "Jessa Garrison",
+		"img": "../../../../assets/content/avatar-132-3.jpg",
+		"email": "user@example.invalid",
+		
+		"role": "Software Engineer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London"
+	},
+	{
+		"name": "Mell Russell",
+		"img": "../../../../assets/content/avatar-132-2.jpg",
+		"email": "user@example.invalid",
+		"role": "Manager",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "Madrid"
+	},
+	{
+		"name": "Bethany Morgan",
+		"img": "../../../../assets/content/avatar-132-9.jpg",
+		"email": "user@example.invalid",
+		"role": "Designer",
+		"phone": "REPLACE_WITH_YOUR_VALUE",
+		"location": "London"
+	}
+]

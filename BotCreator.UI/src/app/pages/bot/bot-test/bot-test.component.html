@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="bot__pc">Test your bot {{botName}}!</h3>
+        <h5 class="bot__mobile">Test your bot {{botName}}!</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <tc-form-group>
+            <tc-badge [view]="'info'" [size]="'lg'">{{'serviceBot.settings.htmlContent'|translate}}</tc-badge>
+            <app-bot-htmlcontent [htmlContent]="widgetHtml"></app-bot-htmlcontent>
+        </tc-form-group>
+    </div>
+</div>
+
+
+<div #container>
+
+</div>

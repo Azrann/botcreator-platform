@@ -1,0 +1,30 @@
+<tc-card class="mb-0" [align]="'center'" [padding]="0" [title]="'signIn.signIn'|translate"
+    [tcBgColor]="'rgba(255,255,255,0.2)'">
+    <form class="login-form mb-0" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <tc-form-group>
+            <tc-input [placeholder]="'signIn.login'|translate" formControlName="username"></tc-input>
+        </tc-form-group>
+
+        <tc-form-group>
+            <tc-input [type]="'password'" [placeholder]="'signIn.password'|translate" formControlName="password">
+            </tc-input>
+        </tc-form-group>
+
+        <tc-form-group>
+            <tc-checkbox [style.width]="'100%'" formControlName="keepSigned">{{'signIn.keepSigned'|translate}}
+            </tc-checkbox>
+        </tc-form-group>
+
+        <button tc-button [block]="true" [tcGradient]="['#07223e', '#516478']" [view]="'info'"
+            [beforeIcon]="'icofont-location-arrow'" [disabled]="loginForm.invalid"
+            [load]="loading">{{'signIn.login'|translate}}</button>
+    </form>
+
+    <div class="forgot-box">
+        <a href="#" [routerLink]="['/extra/sign-up']"
+            (click)="$event.preventDefault()">{{'signIn.signUp'|translate}}</a>
+        <span class="divider"></span>
+        <a href="#" [routerLink]="['/extra/forgot-password']"
+            (click)="$event.preventDefault()">{{'signIn.passwordForgot'|translate}}</a>
+    </div>
+</tc-card>
