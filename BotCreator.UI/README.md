@@ -1,26 +1,28 @@
+**Languages:** [English](README.md) · [Español](README.es.md)
+
 # BotCreator.UI
 
-Frontend Angular del gestor de bots: acceso y registro de usuarios, recuperación de contraseña, edición de bots de atención al cliente, configuración del widget, informes, eventos y chat.
+Angular bot manager frontend: login and registration, password recovery, customer support bot editing, widget configuration, reports, events, and chat.
 
-Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
+Documentation based on local files reviewed on 21 October 2026.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2019.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2019-11-07**, [`BotCreator.UI/tslint.json`](tslint.json); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2019-11-07**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [@angular/cli 8.1.3](https://www.npmjs.com/package/@angular/cli/v/8.1.3), publicada el **2019-07-29** (versión fijada en el lockfile), en [`BotCreator.UI/package.json`](package.json). Fecha contrastada con la versión de [`BotCreator.UI/package-lock.json`](package-lock.json).
+- Most recent datable file: **2019-11-07**, [`BotCreator.UI/tslint.json`](tslint.json); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2019-11-07**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [@angular/cli 8.1.3](https://www.npmjs.com/package/@angular/cli/v/8.1.3), published on **2019-07-29** (version pinned in the lockfile), in [`BotCreator.UI/package.json`](package.json). Cross-checked against the version in [`BotCreator.UI/package-lock.json`](package-lock.json).
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-La interfaz permite configurar un bot y probar su conversación desde el mismo panel. La conexión entre servicios HTTP, motor de chat y pantallas de prueba es interesante para estudiar cómo comprobar visualmente el comportamiento de una configuración.
+The interface lets you configure a bot and test its conversation in the same dashboard. The connection between HTTP services, chat engine, and testing screens is useful for studying how to visually verify a configuration's behavior.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`src/app/core`](src/app/core/)
 - [`src/app/pages`](src/app/pages/)
@@ -28,43 +30,43 @@ Puntos de entrada al código:
 
 <!-- END project-context -->
 
-## Estructura y responsabilidades
+## Structure and responsibilities
 
-| Ruta | Responsabilidad |
+| Path | Responsibility |
 | --- | --- |
-| `src/app/core/` | Servicios HTTP de autenticación, usuarios, bots e informes; middleware y motor de chat PubNub. |
-| `src/app/pages/` | Acceso, registro, recuperación, lista/edición/prueba de bots, dashboard, eventos y perfil. |
-| `projects/coda/` | Biblioteca y aplicación de componentes de panel: layouts, gráficos, mapas, formularios y widgets. |
-| `src/environments/` | Entornos de la aplicación. |
-| `angular.json, package.json` | Configuración del workspace y scripts de Angular CLI. |
-| `firebase.json, .firebaserc` | Configuración de Firebase Hosting; .firebase contiene caché local. |
+| `src/app/core/` | HTTP services for authentication, users, bots, and reports; middleware and PubNub chat engine. |
+| `src/app/pages/` | Login, registration, recovery, bot listing/editing/testing, dashboard, events, and profile. |
+| `projects/coda/` | Dashboard component library and application: layouts, charts, maps, forms, and widgets. |
+| `src/environments/` | Application environments. |
+| `angular.json, package.json` | Workspace configuration and Angular CLI scripts. |
+| `firebase.json, .firebaserc` | Firebase Hosting configuration; .firebase contains local cache. |
 
-## Tecnologías y requisitos
+## Technologies and requirements
 
-Node/npm compatible con Angular CLI 8, Angular 8.1, RxJS 6 y NgRx 8. Las funciones de bots dependen del backend botcreator y de la configuración de mensajería. Firebase CLI solo hace falta para un despliegue expresamente autorizado.
+Node/npm compatible with Angular CLI 8, Angular 8.1, RxJS 6, and NgRx 8. Bot features depend on the botcreator backend and messaging configuration. Firebase CLI is only needed for an explicitly authorized deployment.
 
-## Preparación y arranque
+## Setup and startup
 
-Las fuentes src y projects/coda ya están presentes. Revisar las URLs del backend, instalar dependencias y usar npm start. npm run build y npm run prod-build generan dist; npm test, npm run lint y npm run e2e están declarados. El script deploy publica en Firebase y no se ejecutó.
+The src and projects/coda sources are already present. Review backend URLs, install dependencies, and use npm start. npm run build and npm run prod-build generate dist; npm test, npm run lint, and npm run e2e are declared. The deploy script publishes to Firebase and was not run.
 
-Comandos de preparación, desde esta carpeta, después de revisar la configuración privada:
+Setup commands, run from this folder after reviewing private configuration:
 
 ```text
 npm install
 npm start
 ```
 
-## Configuración e integraciones
+## Configuration and integrations
 
-Revisar los servicios de src/app/core y los entornos de src/environments. ChatEngine contiene claves publish/subscribe de PubNub; Coda incluye una clave Google para mapas. Identificadores de Firebase y claves de navegador requieren revisar contexto y permisos; no equivalen por sí solos a una clave privada de cuenta.
+Review services in src/app/core and environments in src/environments. ChatEngine contains PubNub publish/subscribe keys; Coda includes a Google Maps key. Firebase identifiers and browser keys require contextual and permission review; they are not, by themselves, private account keys.
 
-## Estado de esta copia
+## Status of this copy
 
-Los servicios AuthService, BotService, ReportService y UserService corresponden a operaciones del backend botcreator. BotCreator.UI y botmanager.ui conservan casi las mismas fuentes; se encontraron diferencias en componentes de prueba de bots/eventos y recursos, por lo que se documentan como copias separadas. Se conserva la documentación original. Esta carpeta contiene 889 archivos de código/plantillas/estilos compartidos en rutas equivalentes con botmanager.ui; tres de ellos difieren en la comparación realizada.
+AuthService, BotService, ReportService, and UserService correspond to botcreator backend operations. BotCreator.UI and botmanager.ui preserve nearly identical sources; differences were found in bot testing/event components and resources, so they are documented separately. Original documentation is retained. This folder shares 889 code/template/style files at equivalent paths with botmanager.ui; three differed in the comparison.
 
-La revisión fue estática: no se restauraron dependencias, no se compiló ni se ejecutaron aplicaciones o pruebas. Los comandos anteriores son instrucciones de preparación, no resultados de validación. Las versiones indicadas son las del código conservado.
+The review was static: dependencies were not restored, and applications and tests were neither built nor run. The commands above are setup instructions, not validation results. Listed versions describe the preserved code.
 
 
-## Copia pública
+## Public copy
 
-Las credenciales originales se han retirado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Los datos locales, sesiones, certificados privados y perfiles de despliegue se omiten. Configurar servicios y credenciales propios antes de ejecutar. La compilación y el funcionamiento con servicios externos no se han validado.
+Original credentials have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Local data, sessions, private certificates, and deployment profiles are omitted. Configure your own services and credentials before running. Building and operation with external services have not been validated.

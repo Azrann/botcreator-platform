@@ -1,51 +1,53 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # bot.shopifyapp
 
-Aplicación Shopify para instalar y configurar un widget de atención al cliente en el tema de una tienda. Incluye una interfaz integrada y un servidor que modifica los assets del tema.
+Shopify application for installing and configuring a customer support widget in a store's theme. Includes an embedded interface and a server that modifies theme assets.
 
-Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
+Documentation based on local files reviewed on 21 October 2026.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2019.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2019.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2019-04-03**, [`bot.shopifyapp/node-server/package-lock.json`](node-server/package-lock.json); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2019-03-15**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [@shopify/koa-shopify-auth 3.1.18](https://www.npmjs.com/package/@shopify/koa-shopify-auth/v/3.1.18), publicada el **2019-03-14** (versión fijada en el lockfile), en [`bot.shopifyapp/Chat-Customer-service/package.json`](Chat-Customer-service/package.json). Fecha contrastada con la versión de [`bot.shopifyapp/Chat-Customer-service/package-lock.json`](Chat-Customer-service/package-lock.json).
+- Most recent datable file: **2019-04-03**, [`bot.shopifyapp/node-server/package-lock.json`](node-server/package-lock.json); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2019-03-15**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [@shopify/koa-shopify-auth 3.1.18](https://www.npmjs.com/package/@shopify/koa-shopify-auth/v/3.1.18), published on **2019-03-14** (version pinned in the lockfile), in [`bot.shopifyapp/Chat-Customer-service/package.json`](Chat-Customer-service/package.json). Cross-checked against the version in [`bot.shopifyapp/Chat-Customer-service/package-lock.json`](Chat-Customer-service/package-lock.json).
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+October 2026 copy timestamps and documents generated during this review were excluded. Recoverable dates do not guarantee that there are no later, undated changes.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-El recorrido desde la autenticación de una tienda hasta la modificación de sus assets conecta OAuth, un servidor Node y la instalación de un widget. Es útil para entender la integración de un producto externo dentro de una plataforma de comercio.
+The flow from store authentication to asset modification connects OAuth, a Node server, and widget installation. It is useful for understanding how an external product integrates into a commerce platform.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`Chat-Customer-service/server.js`](Chat-Customer-service/server.js)
 - [`node-server/app.js`](node-server/app.js)
 
 <!-- END project-context -->
 
-## Estructura y responsabilidades
+## Structure and responsibilities
 
-| Ruta | Responsabilidad |
+| Path | Responsibility |
 | --- | --- |
-| `Chat-Customer-service/` | Next.js 8, React 16, Polaris y Koa; server.js implementa OAuth de Shopify. |
-| `Chat-Customer-service/pages/` | Pantallas de instalación y configuración del widget. |
-| `node-server/` | Servidor Express en app.js, persistencia MongoDB y llamadas a Shopify para leer y modificar temas. |
+| `Chat-Customer-service/` | Next.js 8, React 16, Polaris, and Koa; server.js implements Shopify OAuth. |
+| `Chat-Customer-service/pages/` | Widget installation and configuration screens. |
+| `node-server/` | Express server in app.js, MongoDB persistence, and Shopify calls to read and modify themes. |
 
-## Tecnologías y requisitos
+## Technologies and requirements
 
-Node/npm compatible con las dependencias históricas, una aplicación Shopify, una tienda de desarrollo, MongoDB y certificados TLS locales. Ambos servidores leen certificados desde rutas locales.
+Node/npm compatible with the historical dependencies, a Shopify application, a development store, MongoDB, and local TLS certificates. Both servers load certificates from local paths.
 
-## Preparación y arranque
+## Setup and startup
 
-El servicio auxiliar se prepara en node-server con npm install y node app.js. El código configura HTTPS en los puertos 443 y 5000; comprobar rutas de certificados, permisos y URLs de ambos procesos.
+Set up the auxiliary service in node-server using npm install and node app.js. The code configures HTTPS on ports 443 and 5000; check certificate paths, permissions, and URLs for both processes.
 
-Comandos de preparación, desde esta carpeta, después de revisar la configuración privada:
+Setup commands, run from this folder after reviewing private configuration:
 
 ```text
 cd Chat-Customer-service
@@ -53,17 +55,17 @@ npm install
 npm run dev
 ```
 
-## Configuración e integraciones
+## Configuration and integrations
 
-server.js lee SHOPIFY_API_KEY, SHOPIFY_API_SECRET_KEY, PORT y NODE_ENV. Los dos archivos db.js contienen conexiones MongoDB privadas. Adaptar las URLs de callback, CORS y backend a un entorno propio.
+server.js reads SHOPIFY_API_KEY, SHOPIFY_API_SECRET_KEY, PORT, and NODE_ENV. Both db.js files contain private MongoDB connections. Adapt callback URLs, CORS, and backend settings to your own environment.
 
-## Estado de esta copia
+## Status of this copy
 
-Las operaciones sobre temas modifican la tienda. Hay código que almacena o transmite tokens Shopify y requiere revisión antes de usarlo con una tienda real. El script test de ambos paquetes es un marcador que devuelve error.
+Theme operations modify the store. Some code stores or transmits Shopify tokens and requires review before use with a real store. Both packages' test scripts are placeholders that return an error.
 
-La revisión fue estática: no se restauraron dependencias, no se compiló ni se ejecutaron aplicaciones o pruebas. Los comandos anteriores son instrucciones de preparación, no resultados de validación. Las versiones indicadas son las del código conservado.
+The review was static: dependencies were not restored, and applications and tests were neither built nor run. The commands above are setup instructions, not validation results. Listed versions describe the preserved code.
 
 
-## Copia pública
+## Public copy
 
-Las credenciales originales se han retirado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Los datos locales, sesiones, certificados privados y perfiles de despliegue se omiten. Configurar servicios y credenciales propios antes de ejecutar. La compilación y el funcionamiento con servicios externos no se han validado.
+Original credentials have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Local data, sessions, private certificates, and deployment profiles are omitted. Configure your own services and credentials before running. Building and operation with external services have not been validated.

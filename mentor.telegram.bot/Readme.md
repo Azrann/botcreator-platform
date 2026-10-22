@@ -1,29 +1,31 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # mentor.telegram.bot
 
-Plataforma de bots Telegram con flujos conversacionales, SDK, atención al cliente, suscripciones, integraciones de pagos y herramientas de administración.
+Telegram bot platform with conversational flows, SDK, customer support, subscriptions, payment integrations, and administration tools.
 
-Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
+Documentation based on local files reviewed on 21 October 2026.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2020.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2020-02-27**, [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj`](src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2018-07-05**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Microsoft.EntityFrameworkCore 3.1.2](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/3.1.2), publicada el **2020-02-19** (versión declarada), en [`mentor.telegram.bot/src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj`](src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj).
-- Referencia adicional: destino `netcoreapp2.2` en [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj`](src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj); su [versión estable se publicó el 2018-12-04](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2020-02-27**, [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj`](src/Mentor.telegram.bot/Bot.telegram.funnel/Bot.telegram.funnel.csproj); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2018-07-05**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Microsoft.EntityFrameworkCore 3.1.2](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/3.1.2), published on **2020-02-19** (declared version), in [`mentor.telegram.bot/src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj`](src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/Mentor.telegram.bot.sdk.csproj).
+- Additional reference: target `netcoreapp2.2` in [`mentor.telegram.bot/src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj`](src/Mentor.telegram.bot/Bot.Configuration/Bot.Configuration.csproj); its [stable release was published on 2018-12-04](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+October 2026 copy timestamps and documents generated during this review were excluded. Recoverable dates do not guarantee that there are no later, undated changes.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-El motor separa acciones, procesadores y abstracciones de interfaz para construir flujos conversacionales. Es interesante seguir cómo una misma lógica de conversación se conecta con clientes, widgets y servicios de pago o notificación.
+The engine separates actions, processors, and interface abstractions to build conversational flows. Follow how the same conversational logic connects to clients, widgets, and payment or notification services.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`src/Mentor.telegram.bot/Bot.telegram.funnel/Actions/ActionProcessor.cs`](src/Mentor.telegram.bot/Bot.telegram.funnel/Actions/ActionProcessor.cs)
 - [`src/Mentor.telegram.bot/Bot.telegram.funnel/IUserInterfaceService.cs`](src/Mentor.telegram.bot/Bot.telegram.funnel/IUserInterfaceService.cs)
@@ -31,49 +33,49 @@ Puntos de entrada al código:
 
 <!-- END project-context -->
 
-## Estructura y responsabilidades
+## Structure and responsibilities
 
-| Ruta | Responsabilidad |
+| Path | Responsibility |
 | --- | --- |
-| `src/Mentor.telegram.bot/Mentor.telegram.bot.api/` | API ASP.NET Core y controladores de bots, configuración y cron. |
-| `src/Mentor.telegram.bot/Mentor.telegram.bot.api.services/` | Inicialización de bots y lógica de chats. |
-| `src/Mentor.telegram.bot/Mentor.telegram.bot.boundedContext/` | Dominio, almacenamiento, correo y migraciones. |
-| `src/Mentor.telegram.bot/Bot.telegram.funnel/` | Motor de flujos, acciones y procesadores. |
-| `src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/` | SDK consumido por otros proyectos como botcreator. |
-| `src/Mentor.telegram.bot/Mentor.telegram.client/, src/Mentor.telegram.bot/TelegramBot.SessionGenerator/` | Cliente MTProto/OpenTL y generación de sesiones. |
-| `src/Mentor.telegram.bot/Mentor.telegram.coinpayments/, src/Mentor.telegram.bot/Mentor.telegram.paypalpayments/, src/Mentor.telegram.bot/Mentor.telegram.blockchain/` | Integraciones de cobros y consulta de transacciones. |
-| `src/Mentor.telegram.bot/Mentor.telegram.cron/` | Tareas recurrentes con Hangfire. |
-| `src/Widget/, src/Wordpress plugin/` | Widget web y complemento WordPress. |
+| `src/Mentor.telegram.bot/Mentor.telegram.bot.api/` | ASP.NET Core API and bot, configuration, and cron controllers. |
+| `src/Mentor.telegram.bot/Mentor.telegram.bot.api.services/` | Bot initialization and chat logic. |
+| `src/Mentor.telegram.bot/Mentor.telegram.bot.boundedContext/` | Domain, storage, email, and migrations. |
+| `src/Mentor.telegram.bot/Bot.telegram.funnel/` | Flow engine, actions, and processors. |
+| `src/Mentor.telegram.bot/Mentor.telegram.bot.sdk/` | SDK consumed by other projects such as botcreator. |
+| `src/Mentor.telegram.bot/Mentor.telegram.client/, src/Mentor.telegram.bot/TelegramBot.SessionGenerator/` | MTProto/OpenTL client and session generation. |
+| `src/Mentor.telegram.bot/Mentor.telegram.coinpayments/, src/Mentor.telegram.bot/Mentor.telegram.paypalpayments/, src/Mentor.telegram.bot/Mentor.telegram.blockchain/` | Payment collection and transaction query integrations. |
+| `src/Mentor.telegram.bot/Mentor.telegram.cron/` | Recurring Hangfire tasks. |
+| `src/Widget/, src/Wordpress plugin/` | Web widget and WordPress plugin. |
 
-## Tecnologías y requisitos
+## Technologies and requirements
 
-.NET Core 2.2, SQL Server, almacenamiento Azure, PubNub, Telegram y los servicios de correo/pago seleccionados por cada bot. También se usan paquetes Core.Common y Mentor propios.
+.NET Core 2.2, SQL Server, Azure storage, PubNub, Telegram, and the email/payment services selected by each bot. Also uses internal Core.Common and Mentor packages.
 
-Destinos leídos de los proyectos: `netcoreapp2.2`.
+Targets read from project files: `netcoreapp2.2`.
 
-## Preparación y arranque
+## Setup and startup
 
-Preparar configuración privada y dependencias antes de iniciar la API o el planificador. Elegir de forma explícita qué bots e integraciones activar: hay inicializaciones y credenciales en código y pruebas.
+Prepare private configuration and dependencies before starting the API or scheduler. Explicitly choose which bots and integrations to enable: initialization logic and credentials appear in code and tests.
 
-Comandos de preparación, desde esta carpeta, después de revisar la configuración privada:
+Setup commands, run from this folder after reviewing private configuration:
 
 ```text
 dotnet restore src/Mentor.telegram.bot/Mentor.telegram.bot.api/Mentor.telegram.bot.api.csproj
 dotnet build src/Mentor.telegram.bot/Mentor.telegram.bot.api/Mentor.telegram.bot.api.csproj
 ```
 
-Soluciones presentes: `src/Mentor.telegram.bot/Mentor.telegram.bot.sln`.
+Solutions present: `src/Mentor.telegram.bot/Mentor.telegram.bot.sln`.
 
-## Configuración e integraciones
-
-
-## Estado de esta copia
-
-Varias pruebas llaman servicios reales o inicializan datos. No se ejecutaron API, bots, planificadores ni pruebas de integración.
-
-La revisión fue estática: no se restauraron dependencias, no se compiló ni se ejecutaron aplicaciones o pruebas. Los comandos anteriores son instrucciones de preparación, no resultados de validación. Las versiones indicadas son las del código conservado.
+## Configuration and integrations
 
 
-## Copia pública
+## Status of this copy
 
-Las credenciales originales se han retirado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Los datos locales, sesiones, certificados privados y perfiles de despliegue se omiten. Configurar servicios y credenciales propios antes de ejecutar. La compilación y el funcionamiento con servicios externos no se han validado.
+Several tests call real services or initialize data. APIs, bots, schedulers, and integration tests were not run.
+
+The review was static: dependencies were not restored, and applications and tests were neither built nor run. The commands above are setup instructions, not validation results. Listed versions describe the preserved code.
+
+
+## Public copy
+
+Original credentials have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Local data, sessions, private certificates, and deployment profiles are omitted. Configure your own services and credentials before running. Building and operation with external services have not been validated.

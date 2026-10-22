@@ -1,29 +1,31 @@
+**Languages:** [English](Readme.md) · [Español](README.es.md)
+
 # botcreator
 
-Backend para crear, desplegar y administrar bots de atención al cliente, sus widgets web, usuarios y métricas.
+Backend for creating, deploying, and managing customer support bots, web widgets, users, and metrics.
 
-Documentación basada en los archivos locales revisados el 21 de octubre de 2026.
+Documentation based on local files reviewed on 21 October 2026.
 
 <!-- BEGIN project-context -->
 
-## Antigüedad y evidencia
+## Historical dates and evidence
 
-**Año de referencia de esta versión: 2020.** Se toma el archivo de código o configuración más reciente con una fecha histórica recuperable; no se ha podido confirmar la fecha exacta de creación.
+**Reference year for this version: 2020.** This uses the most recent source or configuration file with a recoverable historical date; the exact creation date could not be confirmed.
 
-- Archivo más reciente datable: **2020-03-24**, [`botcreator/src/Functions/Functions/Functions/Status.cs`](src/Functions/Functions/Functions/Status.cs); fecha del commit que modificó el archivo, recuperada del Git local.
-- Primer registro del repositorio Git original que contiene este código: **2019-01-18**. Puede corresponder a una importación; no prueba cuándo se escribió por primera vez.
-- Dependencia fechada más reciente entre las comprobadas: [Microsoft.Extensions.DependencyInjection 3.1.2](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/3.1.2), publicada el **2020-02-18** (versión declarada), en [`botcreator/src/BotCreator.Api/BotCreator.Api.csproj`](src/BotCreator.Api/BotCreator.Api.csproj).
-- Referencia adicional: destino `netcoreapp3.0` en [`botcreator/src/BotCreator.Api/BotCreator.Api.csproj`](src/BotCreator.Api/BotCreator.Api.csproj); su [versión estable se publicó el 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Es una pista de generación tecnológica; pudieron existir versiones preliminares anteriores.
+- Most recent datable file: **2020-03-24**, [`botcreator/src/Functions/Functions/Functions/Status.cs`](src/Functions/Functions/Functions/Status.cs); date of the commit modifying the file, recovered from local Git history.
+- First record in the original Git repository containing this code: **2019-01-18**. This may be an import and does not establish when the code was first written.
+- Most recently published dependency among those checked: [Microsoft.Extensions.DependencyInjection 3.1.2](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/3.1.2), published on **2020-02-18** (declared version), in [`botcreator/src/BotCreator.Api/BotCreator.Api.csproj`](src/BotCreator.Api/BotCreator.Api.csproj).
+- Additional reference: target `netcoreapp3.0` in [`botcreator/src/BotCreator.Api/BotCreator.Api.csproj`](src/BotCreator.Api/BotCreator.Api.csproj); its [stable release was published on 2019-09-23](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). This indicates the technology generation; earlier preview releases may have existed.
 
-La publicación de una dependencia sitúa la configuración conservada a partir de esa versión, si la referencia es válida. Una actualización de paquetes puede ser mucho más reciente que el inicio del proyecto. No se restauraron paquetes para comprobarlo.
+A dependency's publication places the preserved configuration at or after that version, if the reference is valid. Package updates may be much newer than the project's beginnings. Packages were not restored to verify this.
 
-Se descartaron las marcas de tiempo de la copia de octubre de 2026 y los documentos generados durante esta revisión. Las fechas recuperables no garantizan que no existan cambios posteriores sin datar.
+October 2026 copy timestamps and documents generated during this review were excluded. Recoverable dates do not guarantee that there are no later, undated changes.
 
-## Por qué merece la pena mirarlo
+## Why this is worth exploring
 
-La configuración de bots se conecta con la generación del widget y con servicios de informes y eventos. La parte más aprovechable es seguir una operación desde el controlador hasta el servicio y el SDK, para entender cómo se convierte un motor de bots en un producto administrable.
+Bot configuration connects to widget generation and reporting and event services. Following an operation from controller to service and SDK is the most useful route for understanding how a bot engine becomes a manageable product.
 
-Puntos de entrada al código:
+Code entry points:
 
 - [`src/BotCreator.Api/Controllers/BotController.cs`](src/BotCreator.Api/Controllers/BotController.cs)
 - [`src/BotCreator.Api/Controllers/WidgetConfigController.cs`](src/BotCreator.Api/Controllers/WidgetConfigController.cs)
@@ -31,46 +33,46 @@ Puntos de entrada al código:
 
 <!-- END project-context -->
 
-## Estructura y responsabilidades
+## Structure and responsibilities
 
-| Ruta | Responsabilidad |
+| Path | Responsibility |
 | --- | --- |
-| `src/BotCreator.Api/` | API ASP.NET Core: bots, usuarios, autenticación, informes y configuración del widget. |
-| `src/BotCreator.Infrastructure/` | Persistencia Entity Framework, migraciones y autenticación JWT. |
-| `src/BotCreator.Model/, src/BotCreator.Service/` | Modelos y servicios; integración con el SDK Mentor, mensajería y correo. |
-| `src/BotCreator.Repository/` | Proyecto adicional con destino .NET Core 2.1. |
-| `src/Functions/` | Solución de Azure Functions para métricas, feedback, dashboard y otras tareas auxiliares. |
-| `src/BotCreator.Service.Test/, src/TestSdkConsoleApp/` | Pruebas y aplicación de ejemplo del SDK. |
+| `src/BotCreator.Api/` | ASP.NET Core API: bots, users, authentication, reports, and widget configuration. |
+| `src/BotCreator.Infrastructure/` | Entity Framework persistence, migrations, and JWT authentication. |
+| `src/BotCreator.Model/, src/BotCreator.Service/` | Models and services; Mentor SDK, messaging, and email integration. |
+| `src/BotCreator.Repository/` | Additional project targeting .NET Core 2.1. |
+| `src/Functions/` | Azure Functions solution for metrics, feedback, dashboards, and other supporting tasks. |
+| `src/BotCreator.Service.Test/, src/TestSdkConsoleApp/` | SDK tests and sample application. |
 
-## Tecnologías y requisitos
+## Technologies and requirements
 
-.NET Core 3.0 para la API, destinos adicionales 2.1/2.2 y herramientas Azure Functions compatibles con el proyecto. SQL Server, almacenamiento NoSQL de Azure, PubNub, SendGrid y paquetes Mentor.telegram.bot.sdk según la configuración.
+.NET Core 3.0 for the API, additional targets 2.1/2.2, and Azure Functions tools compatible with the project. SQL Server, Azure NoSQL storage, PubNub, SendGrid, and Mentor.telegram.bot.sdk packages are used according to configuration.
 
-Destinos leídos de los proyectos: `netcoreapp2.1`, `netcoreapp2.2`, `netcoreapp3.0`.
+Targets read from project files: `netcoreapp2.1`, `netcoreapp2.2`, `netcoreapp3.0`.
 
-## Preparación y arranque
+## Setup and startup
 
-Preparar bases y configuración privada antes de iniciar BotCreator.Api. Las funciones tienen una solución separada en src/Functions/Functions.sln. No ejecutar automáticamente pruebas de integración con las conexiones antiguas.
+Prepare databases and private configuration before starting BotCreator.Api. Functions have a separate solution at src/Functions/Functions.sln. Do not automatically run integration tests against the old connections.
 
-Comandos de preparación, desde esta carpeta, después de revisar la configuración privada:
+Setup commands, run from this folder after reviewing private configuration:
 
 ```text
 dotnet restore src/BotCreator.sln
 dotnet build src/BotCreator.Api/BotCreator.Api.csproj
 ```
 
-Soluciones presentes: `src/BotCreator.sln`, `src/Functions/Functions.sln`.
+Solutions present: `src/BotCreator.sln`, `src/Functions/Functions.sln`.
 
-## Configuración e integraciones
-
-
-## Estado de esta copia
-
-Relacionado con mentor.telegram.bot por su SDK y el widget; la integración Shopify de bot.shopifyapp también trabaja con widgets de atención. No se verificó un despliegue conjunto.
-
-La revisión fue estática: no se restauraron dependencias, no se compiló ni se ejecutaron aplicaciones o pruebas. Los comandos anteriores son instrucciones de preparación, no resultados de validación. Las versiones indicadas son las del código conservado.
+## Configuration and integrations
 
 
-## Copia pública
+## Status of this copy
 
-Las credenciales originales se han retirado o sustituido por `REPLACE_WITH_YOUR_VALUE`. Los datos locales, sesiones, certificados privados y perfiles de despliegue se omiten. Configurar servicios y credenciales propios antes de ejecutar. La compilación y el funcionamiento con servicios externos no se han validado.
+Related to mentor.telegram.bot through its SDK and widget; the bot.shopifyapp Shopify integration also uses customer support widgets. A joint deployment was not verified.
+
+The review was static: dependencies were not restored, and applications and tests were neither built nor run. The commands above are setup instructions, not validation results. Listed versions describe the preserved code.
+
+
+## Public copy
+
+Original credentials have been removed or replaced with `REPLACE_WITH_YOUR_VALUE`. Local data, sessions, private certificates, and deployment profiles are omitted. Configure your own services and credentials before running. Building and operation with external services have not been validated.
